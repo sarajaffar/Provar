@@ -99,8 +99,10 @@
         <argument id="CurrencyIsoCode">
           <value class="value" valueClass="string">GBP</value>
         </argument>
-        <argument id="RecordTypeId">
-          <value class="value" valueClass="string">School Group</value>
+        <argument argId="707064ab-f1ca-4d02-b308-1b54212c09a5" id="RecordTypeId">
+          <value class="variable">
+            <path element="RecordType"/>
+          </value>
         </argument>
         <argument argId="a0fe3228-7fb1-42a3-9fd2-1d6e33d9ac77" id="Principal_Account__c">
           <value class="variable">
@@ -175,6 +177,9 @@
     <param linkedToUrl="provar:hasvalue:ebe9404e-d29f-4e5b-ab66-3a8481539886" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=Group_Type__c" name="Group_Type__c" title="Group_Type__c">
       <summary/>
     </param>
+    <param linkedToUrl="provar:hasvalue:707064ab-f1ca-4d02-b308-1b54212c09a5" modelBinding="sf:ui:binding:object?object=Account_Group__c&amp;field=RecordTypeId" name="RecordType" title="RecordTypeId">
+      <summary/>
+    </param>
   </params>
   <outputParams>
     <param name="AccountGroupId" title="AccountGroupId">
@@ -203,6 +208,9 @@
     </argument>
     <argument id="Group_Type__c">
       <value class="value" valueClass="string">Multi-Academy Trust</value>
+    </argument>
+    <argument id="RecordType">
+      <value class="value" valueClass="string">School Group</value>
     </argument>
   </args>
   <outputArgs>

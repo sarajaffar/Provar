@@ -112,6 +112,17 @@
         </connection>
       </connections>
     </connectionClass>
+    <connectionClass name="msexc">
+      <connections>
+        <connection name="TESGLOBAL">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="607b54b3-6e88-45c2-972e-4aeebbb8de61" url="exchange:user=sjaffar;password={password};serverType=EWS;hostName=outlook.tesglobal.com"/>
+            <connectionUrl envName="TestEnv" secureStorageNodeId="966218e3-a277-4269-aacf-0a925be4690d" url="exchange:user=sjaffar;password={password};serverType=EWS;hostName=outlook.tesglobal.com"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
   </connectionClasses>
   <browserConfigurations>
     <browserConfiguration adjustBrowserWidthForChromeIde="true" browserHeight="0" browserWidth="0" name="Full Screen">

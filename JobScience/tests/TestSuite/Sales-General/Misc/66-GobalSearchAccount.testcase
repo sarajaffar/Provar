@@ -122,9 +122,7 @@
                                   <value class="value" valueClass="string">JobScience</value>
                                 </argument>
                                 <argument id="RecordTypeId">
-                                  <value class="variable">
-                                    <path element="RecordTypeId"/>
-                                  </value>
+                                  <value class="value" valueClass="string">Master Account</value>
                                 </argument>
                               </arguments>
                               <outputArguments>
@@ -360,6 +358,92 @@
                         </apiParam>
                       </generatedParameters>
                     </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="316" title="On SF Global Search">
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">IanHoy</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="sf:ui:target?action=GlobalSearch"/>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Dont</value>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On SF Global Search</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="317">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="318" title="Click the Search Again Button button">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=searchAgainButton"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                </argument>
+                                <argument id="hover">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="ui:wait:timed?seconds=10"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Click the Search Again Button button</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                                <argument id="ieClickMethod">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                  <summary>How the click should be executed for Internet Explorer.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
                   </steps>
                 </clause>
               </clauses>
@@ -492,7 +576,10 @@
                                         <argument id="pageAssertions">
                                           <value class="valueList" mutable="Mutable"/>
                                         </argument>
-                                        <argument id="wait">
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                                        </argument>
+                                        <argument id="autoRetry">
                                           <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
                                         </argument>
                                       </arguments>
@@ -529,7 +616,10 @@
                                         <argument id="pageAssertions">
                                           <value class="valueList" mutable="Mutable"/>
                                         </argument>
-                                        <argument id="wait">
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                                        </argument>
+                                        <argument id="autoRetry">
                                           <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
                                         </argument>
                                       </arguments>
