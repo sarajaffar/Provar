@@ -123,6 +123,9 @@
                                 <argument id="GT">
                                   <value class="value" valueClass="string">Multi-Academy Trust</value>
                                 </argument>
+                                <argument id="RecordType">
+                                  <value class="value" valueClass="string">School Group</value>
+                                </argument>
                               </arguments>
                               <outputArguments>
                                 <outputArgument id="opportunityId">

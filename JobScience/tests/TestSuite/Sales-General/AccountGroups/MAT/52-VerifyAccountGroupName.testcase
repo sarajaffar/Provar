@@ -115,6 +115,9 @@
                         <argument id="GT">
                           <value class="value" valueClass="string">Multi-Academy Trust</value>
                         </argument>
+                        <argument id="RecordType">
+                          <value class="value" valueClass="string">School Group</value>
+                        </argument>
                       </arguments>
                       <outputArguments>
                         <outputArgument id="opportunityId">
@@ -311,16 +314,16 @@
       <clauses>
         <clause name="hidden" testItemId="209">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="277" title="On SF Account Group (Non-Predecessor Account Group) View screen">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="277" title="On SF Account Group (School Group) View screen">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">IanHoy</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=Non-Predecessor+Account+Group"/>
+                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=School+Group"/>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Account Group (Non-Predecessor Account Group) View screen</value>
+                  <value class="value" valueClass="string">On SF Account Group (School Group) View screen</value>
                 </argument>
                 <argument id="navigate">
                   <value class="value" valueClass="string">Dont</value>
@@ -359,7 +362,6 @@
                         <argument id="interactionDescription">
                           <value class="value" valueClass="string">Click the Opportunities New Group Opportunity button</value>
                         </argument>
-                        <argument id="wait"/>
                         <argument id="captureBefore">
                           <value class="value" valueClass="string">false</value>
                         </argument>
@@ -367,12 +369,33 @@
                           <value class="value" valueClass="string">true</value>
                         </argument>
                         <argument id="hover"/>
+                        <argument id="afterWait">
+                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                        </argument>
+                        <argument id="beforeWait">
+                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                        </argument>
+                        <argument id="ieClickMethod">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="autoRetry"/>
                       </arguments>
                       <generatedParameters>
                         <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                           <type>
                             <booleanType/>
+                          </type>
+                        </apiParam>
+                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                          <summary>How the click should be executed for Internet Explorer.</summary>
+                          <type>
+                            <choiceType>
+                              <constraints>
+                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                              </constraints>
+                            </choiceType>
                           </type>
                         </apiParam>
                       </generatedParameters>
@@ -472,7 +495,10 @@
                         <argument id="pageAssertions">
                           <value class="valueList" mutable="Mutable"/>
                         </argument>
-                        <argument id="wait"/>
+                        <argument id="beforeWait">
+                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                        </argument>
+                        <argument id="autoRetry"/>
                       </arguments>
                     </apiCall>
                   </steps>

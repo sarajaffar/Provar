@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="29">
+<testCase id="4">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: IanHoy (Test)">
@@ -114,6 +114,9 @@
                         </argument>
                         <argument id="GT">
                           <value class="value" valueClass="string">Multi-Academy Trust</value>
+                        </argument>
+                        <argument id="RecordType">
+                          <value class="value" valueClass="string">School Group</value>
                         </argument>
                       </arguments>
                       <outputArguments>
@@ -241,40 +244,6 @@
                 </clause>
               </clauses>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="246" title="On SF Account Group MATs list view">
-              <arguments>
-                <argument id="uiConnectionName">
-                  <value class="value" valueClass="string">IanHoy</value>
-                </argument>
-                <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=List&amp;listView=MATs"/>
-                </argument>
-                <argument id="navigate">
-                  <value class="value" valueClass="string">Always</value>
-                </argument>
-                <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Account Group MATs list view</value>
-                </argument>
-                <argument id="windowSelection">
-                  <value class="value" valueClass="string">Default</value>
-                </argument>
-                <argument id="windowSize">
-                  <value class="value" valueClass="string">Default</value>
-                </argument>
-                <argument id="closeWindow"/>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">full</value>
-                </argument>
-              </arguments>
-              <clauses>
-                <clause name="substeps" testItemId="247">
-                  <steps/>
-                </clause>
-              </clauses>
-            </apiCall>
           </steps>
         </clause>
       </clauses>
@@ -288,136 +257,16 @@
       <clauses>
         <clause name="hidden" testItemId="209">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="251" title="On SF Account Group MATs list view">
-              <tags>
-                <string>disabled</string>
-              </tags>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="243" title="On SF Account Group (School Group) View screen">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">IanHoy</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=List&amp;listView=MATs"/>
-                </argument>
-                <argument id="navigate">
-                  <value class="value" valueClass="string">Dont</value>
+                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=School+Group"/>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Account Group MATs list view</value>
-                </argument>
-                <argument id="windowSelection">
-                  <value class="value" valueClass="string">Default</value>
-                </argument>
-                <argument id="windowSize">
-                  <value class="value" valueClass="string">Default</value>
-                </argument>
-                <argument id="closeWindow"/>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-              </arguments>
-              <clauses>
-                <clause name="substeps" testItemId="252">
-                  <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="253" title="With Account_Group__c rows {Name = $Account_GroupRows.Name}">
-                      <arguments>
-                        <argument id="uiConnectionName">
-                          <value class="value" valueClass="string">IanHoy</value>
-                        </argument>
-                        <argument id="locator">
-                          <value class="uiLocator" uri="sf:ui:locator:row?table=List%2FlistView%2FlistTable"/>
-                        </argument>
-                        <argument id="uiRowLocator">
-                          <value class="eq">
-                            <lhs class="variable">
-                              <path element="Name"/>
-                            </lhs>
-                            <rhs class="variable" topLevel="true">
-                              <path element="Account_GroupRows"/>
-                              <path element="Name"/>
-                            </rhs>
-                          </value>
-                        </argument>
-                        <argument id="locatorDescription">
-                          <value class="value" valueClass="string">With Account_Group__c rows {Name = $Account_GroupRows.Name}</value>
-                        </argument>
-                        <argument id="failIfNotFound">
-                          <value class="value" valueClass="boolean">true</value>
-                        </argument>
-                        <argument id="debugRowLocator">
-                          <value class="value" valueClass="boolean">true</value>
-                        </argument>
-                        <argument id="resultName">
-                          <value class="value" valueClass="string">Row</value>
-                        </argument>
-                        <argument id="resultScope">
-                          <value class="value" valueClass="string">Local</value>
-                        </argument>
-                        <argument id="autoPaginate">
-                          <value class="value" valueClass="boolean">true</value>
-                        </argument>
-                      </arguments>
-                      <clauses>
-                        <clause name="substeps" testItemId="254">
-                          <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="256" title="Click the Account Group Name link">
-                              <arguments>
-                                <argument id="locator">
-                                  <value class="uiLocator" uri="ui:locator?name=Name"/>
-                                </argument>
-                                <argument id="interaction">
-                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
-                                </argument>
-                                <argument id="interactionDescription">
-                                  <value class="value" valueClass="string">Click the Account Group Name link</value>
-                                </argument>
-                                <argument id="wait"/>
-                                <argument id="captureBefore">
-                                  <value class="value" valueClass="string">false</value>
-                                </argument>
-                                <argument id="captureAfter">
-                                  <value class="value" valueClass="string">false</value>
-                                </argument>
-                                <argument id="hover"/>
-                              </arguments>
-                              <generatedParameters>
-                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
-                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
-                                  <type>
-                                    <booleanType/>
-                                  </type>
-                                </apiParam>
-                              </generatedParameters>
-                            </apiCall>
-                          </steps>
-                        </clause>
-                      </clauses>
-                      <generatedParameters>
-                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
-                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
-                          <type>
-                            <booleanType/>
-                          </type>
-                        </apiParam>
-                      </generatedParameters>
-                    </apiCall>
-                  </steps>
-                </clause>
-              </clauses>
-            </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="243" title="On SF Account Group (Non-Predecessor Account Group) View screen">
-              <arguments>
-                <argument id="uiConnectionName">
-                  <value class="value" valueClass="string">IanHoy</value>
-                </argument>
-                <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=Non-Predecessor+Account+Group"/>
-                </argument>
-                <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Account Group (Non-Predecessor Account Group) View screen</value>
+                  <value class="value" valueClass="string">On SF Account Group (School Group) View screen</value>
                 </argument>
                 <argument id="navigate">
                   <value class="value" valueClass="string">Always</value>
@@ -462,7 +311,7 @@
                         <argument id="columnAssertions">
                           <value class="valueList" mutable="Mutable">
                             <uiColumnAssertion resultName="OPPORTUNITY_NAME">
-                              <fieldLocator uri="ui:locator?name=OPPORTUNITY_NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DNAME%26relationship%3DOpportunities__r"/>
+                              <fieldLocator uri="ui:locator?name=OPPORTUNITY_NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DOPPORTUNITY.NAME%26relationship%3DOpportunities__r"/>
                               <attributeAssertions>
                                 <uiAttributeAssertion attributeName="columnValues" comparisonType="None"/>
                               </attributeAssertions>
@@ -472,7 +321,10 @@
                         <argument id="pageAssertions">
                           <value class="valueList" mutable="Mutable"/>
                         </argument>
-                        <argument id="wait"/>
+                        <argument id="beforeWait">
+                          <value class="uiWait" uri="default"/>
+                        </argument>
+                        <argument id="autoRetry"/>
                       </arguments>
                     </apiCall>
                     <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" isTitleUpdated="true" name="AssertValues" testItemId="283" title="MatchOpportunityName">
@@ -545,6 +397,9 @@
         <clause name="hidden" testItemId="231">
           <steps>
             <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="318" title="VerifyInPrincipalAccount">
+              <tags>
+                <string>disabled</string>
+              </tags>
               <arguments>
                 <argument id="description">
                   <value class="value" valueClass="string">VerifyInPrincipalAccount</value>
@@ -553,16 +408,19 @@
               <clauses>
                 <clause name="hidden" testItemId="319">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="268" title="On SF Account Group (Non-Predecessor Account Group) View screen">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="268" title="On SF Account Group (School Group) View screen">
+                      <tags>
+                        <string>disabled</string>
+                      </tags>
                       <arguments>
                         <argument id="uiConnectionName">
                           <value class="value" valueClass="string">IanHoy</value>
                         </argument>
                         <argument id="target">
-                          <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=Non-Predecessor+Account+Group"/>
+                          <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=School+Group"/>
                         </argument>
                         <argument id="targetDescription">
-                          <value class="value" valueClass="string">On SF Account Group (Non-Predecessor Account Group) View screen</value>
+                          <value class="value" valueClass="string">On SF Account Group (School Group) View screen</value>
                         </argument>
                         <argument id="navigate">
                           <value class="value" valueClass="string">Dont</value>
@@ -590,7 +448,7 @@
                       <clauses>
                         <clause name="substeps" testItemId="269">
                           <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="277" title="With Account_Group_Memberships__r rows {Account__c = $AccountRows.Name}">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="277" title="With Account_Group_Memberships__r rows {Account_NAME = $AccountRows.Name}">
                               <arguments>
                                 <argument id="uiConnectionName">
                                   <value class="value" valueClass="string">IanHoy</value>
@@ -601,7 +459,7 @@
                                 <argument id="uiRowLocator">
                                   <value class="eq">
                                     <lhs class="variable">
-                                      <path element="Account__c"/>
+                                      <path element="Account_NAME"/>
                                     </lhs>
                                     <rhs class="variable" topLevel="true">
                                       <path element="AccountRows"/>
@@ -610,7 +468,7 @@
                                   </value>
                                 </argument>
                                 <argument id="locatorDescription">
-                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account__c = $AccountRows.Name}</value>
+                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account_NAME = $AccountRows.Name}</value>
                                 </argument>
                                 <argument id="failIfNotFound">
                                   <value class="value" valueClass="boolean">true</value>
@@ -629,10 +487,10 @@
                               <clauses>
                                 <clause name="substeps" testItemId="278">
                                   <steps>
-                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="279" title="Click the Account reference">
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="279" title="Click the Account Id field">
                                       <arguments>
                                         <argument id="locator">
-                                          <value class="uiLocator" uri="ui:locator?name=Account__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DAccount__c%26relationship%3DAccount_Group_Memberships__r&amp;rowLocator=Account__c+%3D+%27ProvarTest+QVY1%27"/>
+                                          <value class="uiLocator" uri="ui:locator?name=AccountId_Account__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DAccountId_Account__c%26relationship%3DAccount_Group_Memberships__r"/>
                                         </argument>
                                         <argument id="interaction">
                                           <value class="uiInteraction" uri="ui:interaction?name=action"/>
@@ -647,15 +505,328 @@
                                           <value class="value" valueClass="boolean">false</value>
                                         </argument>
                                         <argument id="interactionDescription">
-                                          <value class="value" valueClass="string">Click the Account reference</value>
+                                          <value class="value" valueClass="string">Click the Account Id field</value>
                                         </argument>
-                                        <argument id="wait"/>
+                                        <argument id="afterWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="autoRetry"/>
+                                        <argument id="ieClickMethod">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
                                       </arguments>
                                       <generatedParameters>
                                         <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                                           <type>
                                             <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                          <summary>How the click should be executed for Internet Explorer.</summary>
+                                          <type>
+                                            <choiceType>
+                                              <constraints>
+                                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                              </constraints>
+                                            </choiceType>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="332" title="On SF Account Group (School Group) View screen">
+                      <tags>
+                        <string>disabled</string>
+                      </tags>
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=School+Group"/>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Dont</value>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On SF Account Group (School Group) View screen</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId">
+                          <value class="variable">
+                            <path element="OpportunityRows"/>
+                            <path element="Account_Group__c"/>
+                          </value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="333">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="334" title="With Account_Group_Memberships__r rows {Account_NAME = $AccountRows.Name}">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">JobScience</value>
+                                </argument>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FAccount_Group_Memberships__r%2FAccount_Group_Memberships__rTable"/>
+                                </argument>
+                                <argument id="uiRowLocator">
+                                  <value class="eq">
+                                    <lhs class="variable">
+                                      <path element="Account_NAME"/>
+                                    </lhs>
+                                    <rhs class="variable" topLevel="true">
+                                      <path element="AccountRows"/>
+                                      <path element="Name"/>
+                                    </rhs>
+                                  </value>
+                                </argument>
+                                <argument id="locatorDescription">
+                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account_NAME = $AccountRows.Name}</value>
+                                </argument>
+                                <argument id="failIfNotFound">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="debugRowLocator"/>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">Row</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Local</value>
+                                </argument>
+                                <argument id="autoPaginate"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="335">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="336" title="Click the Account Name field">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=Account_NAME&amp;rowLocator=Account_NAME+%3D+%27ProvarTest+FNQQ%27&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DAccount.NAME%26relationship%3DAccount_Group_Memberships__r"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="hover">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="afterWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Account Name field</value>
+                                        </argument>
+                                        <argument id="autoRetry"/>
+                                        <argument id="ieClickMethod">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                          <summary>How the click should be executed for Internet Explorer.</summary>
+                                          <type>
+                                            <choiceType>
+                                              <constraints>
+                                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                              </constraints>
+                                            </choiceType>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="337" title="On SF Account Group (School Group) View screen">
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">IanHoy</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=School+Group"/>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Dont</value>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On SF Account Group (School Group) View screen</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId">
+                          <value class="variable">
+                            <path element="OpportunityRows"/>
+                            <path element="Account_Group__c"/>
+                          </value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="338">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="339" title="With Account_Group_Memberships__r rows {1}">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">IanHoy</value>
+                                </argument>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FAccount_Group_Memberships__r%2FAccount_Group_Memberships__rTable"/>
+                                </argument>
+                                <argument id="uiRowLocator">
+                                  <value class="value" valueClass="decimal">1</value>
+                                </argument>
+                                <argument id="locatorDescription">
+                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {1}</value>
+                                </argument>
+                                <argument id="failIfNotFound">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="debugRowLocator"/>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">Row</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Local</value>
+                                </argument>
+                                <argument id="autoPaginate"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="340">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="341" title="Click the Account Name field">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=Account_NAME&amp;rowLocator=1&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DAccount.NAME%26relationship%3DAccount_Group_Memberships__r"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="hover">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="afterWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Account Name field</value>
+                                        </argument>
+                                        <argument id="autoRetry"/>
+                                        <argument id="ieClickMethod">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                          <summary>How the click should be executed for Internet Explorer.</summary>
+                                          <type>
+                                            <choiceType>
+                                              <constraints>
+                                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                              </constraints>
+                                            </choiceType>
                                           </type>
                                         </apiParam>
                                       </generatedParameters>
@@ -789,7 +960,10 @@
                                         <argument id="pageAssertions">
                                           <value class="valueList" mutable="Mutable"/>
                                         </argument>
-                                        <argument id="wait"/>
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="autoRetry"/>
                                       </arguments>
                                     </apiCall>
                                   </steps>
@@ -829,16 +1003,16 @@
               <clauses>
                 <clause name="hidden" testItemId="331">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="303" title="On SF Account Group (Non-Predecessor Account Group) View screen">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="303" title="On SF Account Group (School Group) View screen">
                       <arguments>
                         <argument id="uiConnectionName">
                           <value class="value" valueClass="string">IanHoy</value>
                         </argument>
                         <argument id="target">
-                          <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=Non-Predecessor+Account+Group"/>
+                          <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=School+Group"/>
                         </argument>
                         <argument id="targetDescription">
-                          <value class="value" valueClass="string">On SF Account Group (Non-Predecessor Account Group) View screen</value>
+                          <value class="value" valueClass="string">On SF Account Group (School Group) View screen</value>
                         </argument>
                         <argument id="navigate">
                           <value class="value" valueClass="string">Always</value>
@@ -866,7 +1040,7 @@
                       <clauses>
                         <clause name="substeps" testItemId="304">
                           <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="305" title="With Account_Group_Memberships__r rows {Account__c = $NonPrincipalAccountName}">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="305" title="With Account_Group_Memberships__r rows {Account_NAME = $NonPrincipalAccountName}">
                               <arguments>
                                 <argument id="uiConnectionName">
                                   <value class="value" valueClass="string">IanHoy</value>
@@ -877,7 +1051,7 @@
                                 <argument id="uiRowLocator">
                                   <value class="eq">
                                     <lhs class="variable">
-                                      <path element="Account__c"/>
+                                      <path element="Account_NAME"/>
                                     </lhs>
                                     <rhs class="variable" topLevel="true">
                                       <path element="NonPrincipalAccountName"/>
@@ -885,7 +1059,7 @@
                                   </value>
                                 </argument>
                                 <argument id="locatorDescription">
-                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account__c = $NonPrincipalAccountName}</value>
+                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account_NAME = $NonPrincipalAccountName}</value>
                                 </argument>
                                 <argument id="failIfNotFound">
                                   <value class="value" valueClass="boolean">true</value>
@@ -904,10 +1078,10 @@
                               <clauses>
                                 <clause name="substeps" testItemId="306">
                                   <steps>
-                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="307" title="Click the Account reference">
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="307" title="Click the Account Id field">
                                       <arguments>
                                         <argument id="locator">
-                                          <value class="uiLocator" uri="ui:locator?name=Account__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DAccount__c%26relationship%3DAccount_Group_Memberships__r&amp;rowLocator=Account__c+%3D+%27ProvarTest+QVY1%27"/>
+                                          <value class="uiLocator" uri="ui:locator?name=AccountId_Account__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DAccountId_Account__c%26relationship%3DAccount_Group_Memberships__r"/>
                                         </argument>
                                         <argument id="interaction">
                                           <value class="uiInteraction" uri="ui:interaction?name=action"/>
@@ -922,15 +1096,35 @@
                                           <value class="value" valueClass="boolean">false</value>
                                         </argument>
                                         <argument id="interactionDescription">
-                                          <value class="value" valueClass="string">Click the Account reference</value>
+                                          <value class="value" valueClass="string">Click the Account Id field</value>
                                         </argument>
-                                        <argument id="wait"/>
+                                        <argument id="afterWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="autoRetry"/>
+                                        <argument id="ieClickMethod">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
                                       </arguments>
                                       <generatedParameters>
                                         <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                                           <type>
                                             <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                          <summary>How the click should be executed for Internet Explorer.</summary>
+                                          <type>
+                                            <choiceType>
+                                              <constraints>
+                                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                              </constraints>
+                                            </choiceType>
                                           </type>
                                         </apiParam>
                                       </generatedParameters>
@@ -968,7 +1162,7 @@
                           <value class="uiTarget" uri="sf:ui:target?object=Account&amp;action=View&amp;recordType=Master+Account"/>
                         </argument>
                         <argument id="navigate">
-                          <value class="value" valueClass="string">Dont</value>
+                          <value class="value" valueClass="string">Always</value>
                         </argument>
                         <argument id="targetDescription">
                           <value class="value" valueClass="string">On SF Account (Master Account) View screen</value>
@@ -995,7 +1189,10 @@
                       <clauses>
                         <clause name="substeps" testItemId="309">
                           <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="310" title="With Account_Group_Memberships__r rows {Account_Group__c = $Account_GroupRows.Name}">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="310" title="With Account_Group_Memberships__r rows {Account_Group__c_NAME = $Account_GroupRows.Name}">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
                               <arguments>
                                 <argument id="uiConnectionName">
                                   <value class="value" valueClass="string">IanHoy</value>
@@ -1006,7 +1203,7 @@
                                 <argument id="uiRowLocator">
                                   <value class="eq">
                                     <lhs class="variable">
-                                      <path element="Account_Group__c"/>
+                                      <path element="Account_Group__c_NAME"/>
                                     </lhs>
                                     <rhs class="variable" topLevel="true">
                                       <path element="Account_GroupRows"/>
@@ -1015,7 +1212,7 @@
                                   </value>
                                 </argument>
                                 <argument id="locatorDescription">
-                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account_Group__c = $Account_GroupRows.Name}</value>
+                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account_Group__c_NAME = $Account_GroupRows.Name}</value>
                                 </argument>
                                 <argument id="failIfNotFound">
                                   <value class="value" valueClass="boolean">true</value>
@@ -1063,7 +1260,92 @@
                                         <argument id="pageAssertions">
                                           <value class="valueList" mutable="Mutable"/>
                                         </argument>
-                                        <argument id="wait"/>
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="autoRetry"/>
+                                      </arguments>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="342" title="With Account_Group_Memberships__r rows {Account_Group__c_NAME = $Account_GroupRows.Name}">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">IanHoy</value>
+                                </argument>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FAccount_Group_Memberships__r%2FAccount_Group_Memberships__rTable"/>
+                                </argument>
+                                <argument id="uiRowLocator">
+                                  <value class="eq">
+                                    <lhs class="variable">
+                                      <path element="Account_Group__c_NAME"/>
+                                    </lhs>
+                                    <rhs class="variable" topLevel="true">
+                                      <path element="Account_GroupRows"/>
+                                      <path element="Name"/>
+                                    </rhs>
+                                  </value>
+                                </argument>
+                                <argument id="locatorDescription">
+                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account_Group__c_NAME = $Account_GroupRows.Name}</value>
+                                </argument>
+                                <argument id="failIfNotFound">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="debugRowLocator"/>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">Row</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Local</value>
+                                </argument>
+                                <argument id="autoPaginate"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="343">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="344" title="AssertHasBeenOpportunity">
+                                      <arguments>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Values</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Test</value>
+                                        </argument>
+                                        <argument id="fieldAssertions">
+                                          <value class="valueList" mutable="Mutable">
+                                            <uiFieldAssertion resultName="Group_Has_Open_Opportunity__c">
+                                              <fieldLocator uri="ui:locator?name=Group_Has_Open_Opportunity__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DGroup_Has_Open_Opportunity__c%26relationship%3DAccount_Group_Memberships__r"/>
+                                              <attributeAssertions>
+                                                <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
+                                                  <value class="value" valueClass="string">Open</value>
+                                                </uiAttributeAssertion>
+                                              </attributeAssertions>
+                                            </uiFieldAssertion>
+                                          </value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="string">true</value>
+                                        </argument>
+                                        <argument id="columnAssertions">
+                                          <value class="valueList" mutable="Mutable"/>
+                                        </argument>
+                                        <argument id="pageAssertions">
+                                          <value class="valueList" mutable="Mutable"/>
+                                        </argument>
+                                        <argument id="beforeWait"/>
+                                        <argument id="autoRetry"/>
                                       </arguments>
                                     </apiCall>
                                   </steps>

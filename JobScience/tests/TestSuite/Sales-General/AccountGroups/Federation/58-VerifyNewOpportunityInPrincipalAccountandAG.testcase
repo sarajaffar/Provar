@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="11">
+<testCase id="2">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: IanHoy (Test)">
@@ -104,21 +104,21 @@
               <clauses>
                 <clause name="hidden" testItemId="233">
                   <steps>
-                    <caseCall testCaseId="1295e835-f722-4280-b6b6-d2d2b929aa89" testItemId="304">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="383">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
                         </argument>
                         <argument id="RecordTypeId">
-                          <value class="value" valueClass="string">Unverified Master Account</value>
+                          <value class="value" valueClass="string">Master Account</value>
                         </argument>
                       </arguments>
                       <outputArguments>
-                        <outputArgument id="AccountId">
-                          <name class="value" valueClass="string">AccountId</name>
-                        </outputArgument>
                         <outputArgument id="AccountRowsID">
                           <name class="value" valueClass="string">AccountRowsID</name>
+                        </outputArgument>
+                        <outputArgument id="AccountId">
+                          <name class="value" valueClass="string">AccountId</name>
                         </outputArgument>
                       </outputArguments>
                     </caseCall>
@@ -140,6 +140,9 @@
                         </argument>
                         <argument id="Group_Type__c">
                           <value class="value" valueClass="string">Federation</value>
+                        </argument>
+                        <argument id="RecordType">
+                          <value class="value" valueClass="string">Institution</value>
                         </argument>
                       </arguments>
                       <outputArguments>
@@ -189,16 +192,19 @@
       <clauses>
         <clause name="hidden" testItemId="209">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="306" title="On SF Account Group (Non-Predecessor Account Group) View screen">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="306" title="On SF Account Group (Institution) View screen">
+              <tags>
+                <string>disabled</string>
+              </tags>
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">IanHoy</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=Non-Predecessor+Account+Group"/>
+                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=Institution"/>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Account Group (Non-Predecessor Account Group) View screen</value>
+                  <value class="value" valueClass="string">On SF Account Group (Institution) View screen</value>
                 </argument>
                 <argument id="navigate">
                   <value class="value" valueClass="string">Always</value>
@@ -225,10 +231,10 @@
               <clauses>
                 <clause name="substeps" testItemId="269">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="295" title="Click the Opportunities New Group Opportunity button">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="384" title="Click the Opportunities New button">
                       <arguments>
                         <argument id="locator">
-                          <value class="uiLocator" uri="ui:locator?name=New_Group_Opportunity&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26action%3DNew_Group_Opportunity%26relationship%3DOpportunities__r"/>
+                          <value class="uiLocator" uri="ui:locator?name=New&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26action%3DNew%26relationship%3DOpportunities__r"/>
                         </argument>
                         <argument id="interaction">
                           <value class="uiInteraction" uri="ui:interaction?name=action"/>
@@ -242,16 +248,36 @@
                         <argument id="captureAfter">
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
-                        <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Click the Opportunities New Group Opportunity button</value>
+                        <argument id="beforeWait">
+                          <value class="uiWait" uri="default"/>
                         </argument>
-                        <argument id="wait"/>
+                        <argument id="afterWait">
+                          <value class="uiWait" uri="default"/>
+                        </argument>
+                        <argument id="interactionDescription">
+                          <value class="value" valueClass="string">Click the Opportunities New button</value>
+                        </argument>
+                        <argument id="autoRetry"/>
+                        <argument id="ieClickMethod">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
                       </arguments>
                       <generatedParameters>
                         <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                           <type>
                             <booleanType/>
+                          </type>
+                        </apiParam>
+                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                          <summary>How the click should be executed for Internet Explorer.</summary>
+                          <type>
+                            <choiceType>
+                              <constraints>
+                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                              </constraints>
+                            </choiceType>
                           </type>
                         </apiParam>
                       </generatedParameters>
@@ -268,19 +294,19 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="369" title="On SF Opportunity Record Type selection screen">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="385" title="On SF Account Group (School Group) View screen">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">IanHoy</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=recordTypeNew"/>
+                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=School+Group"/>
                 </argument>
                 <argument id="navigate">
                   <value class="value" valueClass="string">Dont</value>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Opportunity Record Type selection screen</value>
+                  <value class="value" valueClass="string">On SF Account Group (School Group) View screen</value>
                 </argument>
                 <argument id="windowSelection">
                   <value class="value" valueClass="string">Default</value>
@@ -295,14 +321,19 @@
                 <argument id="captureAfter">
                   <value class="value" valueClass="string">false</value>
                 </argument>
+                <argument id="sfUiTargetObjectId">
+                  <value class="variable">
+                    <path element="AccountGroupId"/>
+                  </value>
+                </argument>
               </arguments>
               <clauses>
-                <clause name="substeps" testItemId="367">
+                <clause name="substeps" testItemId="386">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="368" title="Click the Continue button">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="387" title="Click the Opportunities New Group Opportunity button">
                       <arguments>
                         <argument id="locator">
-                          <value class="uiLocator" uri="ui:locator?name=save&amp;path=selectRecordType"/>
+                          <value class="uiLocator" uri="ui:locator?name=New_Group_Opportunity&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26action%3DNew_Group_Opportunity%26relationship%3DOpportunities__r"/>
                         </argument>
                         <argument id="interaction">
                           <value class="uiInteraction" uri="ui:interaction?name=action"/>
@@ -316,16 +347,36 @@
                         <argument id="captureAfter">
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
-                        <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Click the Continue button</value>
+                        <argument id="beforeWait">
+                          <value class="uiWait" uri="default"/>
                         </argument>
-                        <argument id="wait"/>
+                        <argument id="afterWait">
+                          <value class="uiWait" uri="default"/>
+                        </argument>
+                        <argument id="interactionDescription">
+                          <value class="value" valueClass="string">Click the Opportunities New Group Opportunity button</value>
+                        </argument>
+                        <argument id="autoRetry"/>
+                        <argument id="ieClickMethod">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                           <type>
                             <booleanType/>
+                          </type>
+                        </apiParam>
+                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                          <summary>How the click should be executed for Internet Explorer.</summary>
+                          <type>
+                            <choiceType>
+                              <constraints>
+                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                              </constraints>
+                            </choiceType>
                           </type>
                         </apiParam>
                       </generatedParameters>
@@ -333,6 +384,14 @@
                   </steps>
                 </clause>
               </clauses>
+              <generatedParameters>
+                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
             </apiCall>
           </steps>
         </clause>
@@ -454,16 +513,16 @@
               <clauses>
                 <clause name="hidden" testItemId="319">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="292" title="On SF Account Group (Non-Predecessor Account Group) View screen">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="292" title="On SF Account Group (Institution) View screen">
                       <arguments>
                         <argument id="uiConnectionName">
                           <value class="value" valueClass="string">IanHoy</value>
                         </argument>
                         <argument id="target">
-                          <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=Non-Predecessor+Account+Group"/>
+                          <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=Institution"/>
                         </argument>
                         <argument id="targetDescription">
-                          <value class="value" valueClass="string">On SF Account Group (Non-Predecessor Account Group) View screen</value>
+                          <value class="value" valueClass="string">On SF Account Group (Institution) View screen</value>
                         </argument>
                         <argument id="navigate">
                           <value class="value" valueClass="string">Always</value>
@@ -507,7 +566,7 @@
                                 <argument id="columnAssertions">
                                   <value class="valueList" mutable="Mutable">
                                     <uiColumnAssertion resultName="OPPORTUNITY_NAME">
-                                      <fieldLocator uri="ui:locator?name=OPPORTUNITY_NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DNAME%26relationship%3DOpportunities__r"/>
+                                      <fieldLocator uri="ui:locator?name=OPPORTUNITY_NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DOPPORTUNITY.NAME%26relationship%3DOpportunities__r"/>
                                       <attributeAssertions>
                                         <uiAttributeAssertion attributeName="columnValues" comparisonType="None"/>
                                       </attributeAssertions>
@@ -518,7 +577,7 @@
                                   <value class="valueList" mutable="Mutable"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>
@@ -714,7 +773,7 @@
                                 <argument id="columnAssertions">
                                   <value class="valueList" mutable="Mutable">
                                     <uiColumnAssertion resultName="OPPORTUNITY_NAME">
-                                      <fieldLocator uri="ui:locator?name=OPPORTUNITY_NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DNAME%26relationship%3DOpportunities"/>
+                                      <fieldLocator uri="ui:locator?name=OPPORTUNITY_NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DOPPORTUNITY.NAME%26relationship%3DOpportunities"/>
                                       <attributeAssertions>
                                         <uiAttributeAssertion attributeName="columnValues" comparisonType="None"/>
                                       </attributeAssertions>

@@ -89,7 +89,7 @@
           <summary>THE</summary>
           <connectionUrls>
             <connectionUrl url="sf:user=jessica.marshall@tesglobal.com.test;environment=PROD_DEV;logonAsConnection=JobScience"/>
-            <connectionUrl envName="TestEnv" url="sf:user=jessica.marshall@tesglobal.com.test;environment=PROD_DEV;logonAsConnection=JobScience"/>
+            <connectionUrl envName="TestEnv" url="sf:user=nick.davis@tesglobal.com.test;environment=PROD_DEV;logonAsConnection=JobScience"/>
           </connectionUrls>
         </connection>
         <connection name="NickPirog">

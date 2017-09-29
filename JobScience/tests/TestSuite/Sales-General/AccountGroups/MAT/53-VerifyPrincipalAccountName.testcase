@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="4">
+<testCase id="24">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: IanHoy (Test)">
@@ -114,6 +114,9 @@
                         </argument>
                         <argument id="GT">
                           <value class="value" valueClass="string">Multi-Academy Trust</value>
+                        </argument>
+                        <argument id="RecordType">
+                          <value class="value" valueClass="string">School Group</value>
                         </argument>
                       </arguments>
                       <outputArguments>
@@ -336,16 +339,16 @@
       <clauses>
         <clause name="hidden" testItemId="209">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="277" title="On SF Account Group (Non-Predecessor Account Group) View screen">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="277" title="On SF Account Group (School Group) View screen">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">IanHoy</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=Non-Predecessor+Account+Group"/>
+                  <value class="uiTarget" uri="sf:ui:target?object=Account_Group__c&amp;action=View&amp;recordType=School+Group"/>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Account Group (Non-Predecessor Account Group) View screen</value>
+                  <value class="value" valueClass="string">On SF Account Group (School Group) View screen</value>
                 </argument>
                 <argument id="navigate">
                   <value class="value" valueClass="string">Dont</value>
@@ -373,90 +376,6 @@
               <clauses>
                 <clause name="substeps" testItemId="269">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="307" title="With Account_Group_Memberships__r rows {Account__c = $AccountRows.Name}">
-                      <tags>
-                        <string>disabled</string>
-                      </tags>
-                      <arguments>
-                        <argument id="uiConnectionName">
-                          <value class="value" valueClass="string">IanHoy</value>
-                        </argument>
-                        <argument id="locator">
-                          <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FAccount_Group_Memberships__r%2FAccount_Group_Memberships__rTable"/>
-                        </argument>
-                        <argument id="uiRowLocator">
-                          <value class="eq">
-                            <lhs class="variable">
-                              <path element="Account__c"/>
-                            </lhs>
-                            <rhs class="variable" topLevel="true">
-                              <path element="AccountRows"/>
-                              <path element="Name"/>
-                            </rhs>
-                          </value>
-                        </argument>
-                        <argument id="locatorDescription">
-                          <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account__c = $AccountRows.Name}</value>
-                        </argument>
-                        <argument id="failIfNotFound">
-                          <value class="value" valueClass="boolean">true</value>
-                        </argument>
-                        <argument id="debugRowLocator"/>
-                        <argument id="resultName">
-                          <value class="value" valueClass="string">Row</value>
-                        </argument>
-                        <argument id="resultScope">
-                          <value class="value" valueClass="string">Local</value>
-                        </argument>
-                        <argument id="autoPaginate"/>
-                      </arguments>
-                      <clauses>
-                        <clause name="substeps" testItemId="280">
-                          <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="306" title="VerifyPrincipalAccount">
-                              <arguments>
-                                <argument id="fieldAssertions">
-                                  <value class="valueList" mutable="Mutable">
-                                    <uiFieldAssertion resultName="IsPrincipal__c">
-                                      <fieldLocator uri="ui:locator?name=IsPrincipal__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DIsPrincipal__c%26relationship%3DAccount_Group_Memberships__r"/>
-                                      <attributeAssertions>
-                                        <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
-                                          <value class="value" valueClass="boolean">true</value>
-                                        </uiAttributeAssertion>
-                                      </attributeAssertions>
-                                    </uiFieldAssertion>
-                                  </value>
-                                </argument>
-                                <argument id="columnAssertions">
-                                  <value class="valueList" mutable="Mutable"/>
-                                </argument>
-                                <argument id="pageAssertions">
-                                  <value class="valueList" mutable="Mutable"/>
-                                </argument>
-                                <argument id="resultName">
-                                  <value class="value" valueClass="string">PrincipalAccount</value>
-                                </argument>
-                                <argument id="resultScope">
-                                  <value class="value" valueClass="string">Test</value>
-                                </argument>
-                                <argument id="captureAfter">
-                                  <value class="value" valueClass="string">true</value>
-                                </argument>
-                                <argument id="wait"/>
-                              </arguments>
-                            </apiCall>
-                          </steps>
-                        </clause>
-                      </clauses>
-                      <generatedParameters>
-                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
-                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
-                          <type>
-                            <booleanType/>
-                          </type>
-                        </apiParam>
-                      </generatedParameters>
-                    </apiCall>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="319" title="VerifyPrincipalAccount">
                       <arguments>
                         <argument id="resultName">
@@ -634,7 +553,10 @@
                         <argument id="pageAssertions">
                           <value class="valueList" mutable="Mutable"/>
                         </argument>
-                        <argument id="wait"/>
+                        <argument id="beforeWait">
+                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                        </argument>
+                        <argument id="autoRetry"/>
                       </arguments>
                     </apiCall>
                   </steps>
