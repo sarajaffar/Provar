@@ -47,6 +47,7 @@
           <value class="value" valueClass="string">default</value>
         </argument>
         <argument id="privateBrowsingMode"/>
+        <argument id="webBrowser"/>
       </arguments>
     </apiCall>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="80" title="Set Values: LeadName">

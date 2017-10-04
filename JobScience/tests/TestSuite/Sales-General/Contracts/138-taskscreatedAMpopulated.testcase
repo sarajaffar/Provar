@@ -307,10 +307,10 @@
                               <clauses>
                                 <clause name="substeps" testItemId="626">
                                   <steps>
-                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="627" title="Check the Product Name 2 field">
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="627" title="Check the Product Name 1 field">
                                       <arguments>
                                         <argument id="locator">
-                                          <value class="uiLocator" uri="ui:locator?name=productName2"/>
+                                          <value class="uiLocator" uri="ui:locator?name=productName1"/>
                                         </argument>
                                         <argument id="interaction">
                                           <value class="uiInteraction" uri="ui:interaction?name=check"/>
@@ -334,21 +334,23 @@
                                           <value class="uiWait" uri="default"/>
                                         </argument>
                                         <argument id="interactionDescription">
-                                          <value class="value" valueClass="string">Check the Product Name 2 field</value>
+                                          <value class="value" valueClass="string">Check the Product Name 1 field</value>
                                         </argument>
                                         <argument id="autoRetry"/>
+                                        <argument id="ieClickMethod">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
                                       </arguments>
                                       <generatedParameters>
-                                        <apiParam group="value" name="blur" title="Tab off field">
-                                          <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                        <apiParam group="value" name="ieClickMethod" seq="10000" title="IE Click Method">
+                                          <summary>How the click should be executed for Internet Explorer.</summary>
                                           <type>
-                                            <booleanType/>
-                                          </type>
-                                        </apiParam>
-                                        <apiParam group="value" name="pressEnter" title="Press Enter">
-                                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
-                                          <type>
-                                            <booleanType/>
+                                            <choiceType>
+                                              <constraints>
+                                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                              </constraints>
+                                            </choiceType>
                                           </type>
                                         </apiParam>
                                       </generatedParameters>
@@ -408,10 +410,10 @@
                                 </apiParam>
                               </generatedParameters>
                             </apiCall>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="629" title="Click the Save 2 button">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="629" title="Click the Product Name field">
                               <arguments>
                                 <argument id="locator">
-                                  <value class="uiLocator" uri="ui:locator?name=save2"/>
+                                  <value class="uiLocator" uri="ui:locator?name=productName&amp;path=productSelectionLines&amp;rowLocator=1"/>
                                 </argument>
                                 <argument id="interaction">
                                   <value class="uiInteraction" uri="ui:interaction?name=action"/>
@@ -432,7 +434,7 @@
                                   <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="interactionDescription">
-                                  <value class="value" valueClass="string">Click the Save 2 button</value>
+                                  <value class="value" valueClass="string">Click the Product Name field</value>
                                 </argument>
                                 <argument id="autoRetry"/>
                                 <argument id="ieClickMethod">

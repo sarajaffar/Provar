@@ -240,10 +240,10 @@
                           <value class="value" valueClass="string">Activate inline edit the Invoice Name field</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
@@ -407,7 +407,7 @@
                           <value class="valueList" mutable="Mutable"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
@@ -474,10 +474,10 @@
               <clauses>
                 <clause name="substeps" testItemId="251">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="264" title="Activate inline edit the Invoice Name field">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="264" title="Activate inline edit the Account Name field">
                       <arguments>
                         <argument id="locator">
-                          <value class="uiLocator" uri="ui:locator?name=Invoice_Name__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DInvoice_Name__c"/>
+                          <value class="uiLocator" uri="ui:locator?name=Name&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DName"/>
                         </argument>
                         <argument id="interaction">
                           <value class="uiInteraction" uri="ui:interaction?name=sfIleActivate"/>
@@ -489,7 +489,7 @@
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Activate inline edit the Invoice Name field</value>
+                          <value class="value" valueClass="string">Activate inline edit the Account Name field</value>
                         </argument>
                         <argument id="afterWait">
                           <value class="uiWait" uri="default"/>
@@ -540,11 +540,11 @@
                         <argument id="autoRetry"/>
                       </arguments>
                     </apiCall>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="260" title="Set the Invoice Name field to Invoice name">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="260" title="Set the Account Name field to Invoice name">
                       <tags/>
                       <arguments>
                         <argument id="locator">
-                          <value class="uiLocator" uri="ui:locator?name=Invoice_Name__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DInvoice_Name__c"/>
+                          <value class="uiLocator" uri="ui:locator?name=Name&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DName"/>
                         </argument>
                         <argument id="interaction">
                           <value class="uiInteraction" uri="ui:interaction?name=set"/>
@@ -565,20 +565,23 @@
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Set the Invoice Name field to Invoice name</value>
+                          <value class="value" valueClass="string">Set the Account Name field to Invoice name</value>
                         </argument>
-                        <argument id="wait"/>
-                        <argument id="beforeWait"/>
-                        <argument id="afterWait"/>
+                        <argument id="beforeWait">
+                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                        </argument>
+                        <argument id="afterWait">
+                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                        </argument>
                         <argument id="autoRetry"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Invoice_Name__c" name="value" seq="10000" title="Value">
+                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Name" name="value" seq="10000" title="Value">
                           <summary>The value to be populated.</summary>
                           <type>
                             <textType>
                               <constraints>
-                                <valueConstraint name="maxLength">60</valueConstraint>
+                                <valueConstraint name="maxLength">255</valueConstraint>
                                 <valueConstraint name="maxLines">1</valueConstraint>
                               </constraints>
                             </textType>

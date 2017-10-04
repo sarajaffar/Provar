@@ -184,10 +184,10 @@
                       <clauses>
                         <clause name="substeps" testItemId="318">
                           <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="319" title="Activate inline edit the Print Creative Status picklist">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="319" title="Activate inline edit the Close button">
                               <arguments>
                                 <argument id="locator">
-                                  <value class="uiLocator" uri="ui:locator?name=Print_Creative_Status__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DCase%26field%3DPrint_Creative_Status__c"/>
+                                  <value class="uiLocator" uri="ui:locator?name=Close&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DCase%26action%3DClose"/>
                                 </argument>
                                 <argument id="interaction">
                                   <value class="uiInteraction" uri="ui:interaction?name=sfIleActivate"/>
@@ -199,15 +199,21 @@
                                   <value class="value" valueClass="boolean">false</value>
                                 </argument>
                                 <argument id="interactionDescription">
-                                  <value class="value" valueClass="string">Activate inline edit the Print Creative Status picklist</value>
+                                  <value class="value" valueClass="string">Activate inline edit the Close button</value>
                                 </argument>
-                                <argument id="wait"/>
+                                <argument id="afterWait">
+                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                </argument>
+                                <argument id="autoRetry"/>
                               </arguments>
                             </apiCall>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="320" title="Set the Print Creative Status picklist to In Progress">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="320" title="Set the Accept button to In Progress">
                               <arguments>
                                 <argument id="locator">
-                                  <value class="uiLocator" uri="ui:locator?name=Print_Creative_Status__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DCase%26field%3DPrint_Creative_Status__c"/>
+                                  <value class="uiLocator" uri="ui:locator?name=Accept&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DCase%26action%3DAccept"/>
                                 </argument>
                                 <argument id="interaction">
                                   <value class="uiInteraction" uri="ui:interaction?name=set"/>
@@ -228,9 +234,15 @@
                                   <value class="value" valueClass="boolean">false</value>
                                 </argument>
                                 <argument id="interactionDescription">
-                                  <value class="value" valueClass="string">Set the Print Creative Status picklist to In Progress</value>
+                                  <value class="value" valueClass="string">Set the Accept button to In Progress</value>
                                 </argument>
-                                <argument id="wait"/>
+                                <argument id="afterWait">
+                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                </argument>
+                                <argument id="autoRetry"/>
                               </arguments>
                               <generatedParameters>
                                 <apiParam group="value" modelBinding="sf:ui:binding:object?object=Case&amp;field=Print_Creative_Status__c" name="value" seq="10000" title="Value">

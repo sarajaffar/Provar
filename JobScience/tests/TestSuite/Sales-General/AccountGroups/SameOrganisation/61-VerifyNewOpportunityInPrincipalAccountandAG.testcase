@@ -251,10 +251,10 @@
                           <value class="value" valueClass="string">Click the Opportunities New button</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                         <argument id="ieClickMethod">
@@ -477,7 +477,7 @@
                                   <value class="valueList" mutable="Mutable"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>
@@ -525,95 +525,6 @@
                                 </argument>
                                 <argument id="failureMessage"/>
                               </arguments>
-                            </apiCall>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="294" title="With Account_Group_Memberships__r rows {Account__c = $AccountRowsID.Name}">
-                              <tags>
-                                <string>disabled</string>
-                              </tags>
-                              <arguments>
-                                <argument id="uiConnectionName">
-                                  <value class="value" valueClass="string">IanHoy</value>
-                                </argument>
-                                <argument id="locator">
-                                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FAccount_Group_Memberships__r%2FAccount_Group_Memberships__rTable"/>
-                                </argument>
-                                <argument id="uiRowLocator">
-                                  <value class="eq">
-                                    <lhs class="variable">
-                                      <path element="Account__c"/>
-                                    </lhs>
-                                    <rhs class="variable" topLevel="true">
-                                      <path element="AccountRowsID"/>
-                                      <path element="Name"/>
-                                    </rhs>
-                                  </value>
-                                </argument>
-                                <argument id="locatorDescription">
-                                  <value class="value" valueClass="string">With Account_Group_Memberships__r rows {Account__c = $AccountRowsID.Name}</value>
-                                </argument>
-                                <argument id="failIfNotFound">
-                                  <value class="value" valueClass="boolean">true</value>
-                                </argument>
-                                <argument id="debugRowLocator"/>
-                                <argument id="resultName">
-                                  <value class="value" valueClass="string">Row</value>
-                                </argument>
-                                <argument id="resultScope">
-                                  <value class="value" valueClass="string">Local</value>
-                                </argument>
-                                <argument id="autoPaginate"/>
-                              </arguments>
-                              <clauses>
-                                <clause name="substeps" testItemId="280">
-                                  <steps>
-                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="281" title="Click the ?">
-                                      <arguments>
-                                        <argument id="locator">
-                                          <value class="uiLocator" uri="ui:locator?name=Account__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DAccount__c%26relationship%3DAccount_Group_Memberships__r&amp;rowLocator=Account__c+%3D+%27ProvarTest+99%27"/>
-                                        </argument>
-                                        <argument id="interaction">
-                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
-                                        </argument>
-                                        <argument id="hover">
-                                          <value class="value" valueClass="boolean">false</value>
-                                        </argument>
-                                        <argument id="captureBefore">
-                                          <value class="value" valueClass="boolean">false</value>
-                                        </argument>
-                                        <argument id="captureAfter">
-                                          <value class="value" valueClass="boolean">false</value>
-                                        </argument>
-                                        <argument id="interactionDescription">
-                                          <value class="value" valueClass="string">Click the ?</value>
-                                        </argument>
-                                        <argument id="afterWait">
-                                          <value class="uiWait" uri="default"/>
-                                        </argument>
-                                        <argument id="beforeWait">
-                                          <value class="uiWait" uri="default"/>
-                                        </argument>
-                                        <argument id="autoRetry"/>
-                                      </arguments>
-                                      <generatedParameters>
-                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
-                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
-                                          <type>
-                                            <booleanType/>
-                                          </type>
-                                        </apiParam>
-                                      </generatedParameters>
-                                    </apiCall>
-                                  </steps>
-                                </clause>
-                              </clauses>
-                              <generatedParameters>
-                                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
-                                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
-                                  <type>
-                                    <booleanType/>
-                                  </type>
-                                </apiParam>
-                              </generatedParameters>
                             </apiCall>
                             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="321" title="VerifyPrincipalAccount">
                               <arguments>
@@ -724,7 +635,7 @@
                                   <value class="valueList" mutable="Mutable"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>
