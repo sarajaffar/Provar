@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="20">
+<testCase id="5">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: IanHoy (Test)">
@@ -410,19 +410,19 @@
       <clauses>
         <clause name="hidden" testItemId="231">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="299" title="On SF Opportunity (Subscription Opportunity) New screen">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="395" title="On SF Opportunity (Subscription Opportunity) View screen">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">IanHoy</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=New&amp;recordType=Subscription+Opportunity"/>
+                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View&amp;recordType=Subscription+Opportunity"/>
                 </argument>
                 <argument id="navigate">
                   <value class="value" valueClass="string">Dont</value>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Opportunity (Subscription Opportunity) New screen</value>
+                  <value class="value" valueClass="string">On SF Opportunity (Subscription Opportunity) View screen</value>
                 </argument>
                 <argument id="windowSelection">
                   <value class="value" valueClass="string">Default</value>
@@ -437,17 +437,14 @@
                 <argument id="captureAfter">
                   <value class="value" valueClass="string">false</value>
                 </argument>
-                <argument id="sfUiTargetResultName">
-                  <value class="value" valueClass="string">opportunityId</value>
-                </argument>
-                <argument id="sfUiTargetResultScope">
-                  <value class="value" valueClass="string">Test</value>
+                <argument id="sfUiTargetObjectId">
+                  <value class="value" valueClass="string">00626000006n5Qb</value>
                 </argument>
               </arguments>
               <clauses>
-                <clause name="substeps" testItemId="300">
+                <clause name="substeps" testItemId="396">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="301" title="VerifyAccountName">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="398" title="VerifyAccountName">
                       <arguments>
                         <argument id="resultName">
                           <value class="value" valueClass="string">Values</value>
@@ -480,7 +477,7 @@
                           <value class="valueList" mutable="Mutable"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
@@ -489,23 +486,10 @@
                 </clause>
               </clauses>
               <generatedParameters>
-                <apiParam group="result" name="sfUiTargetResultName" resultNameParameter="true" title="Result Name">
-                  <summary>The name under which the resulting Object Id will be stored.</summary>
+                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
                   <type>
                     <textType/>
-                  </type>
-                  <resultValueClasses>
-                    <string>ApexObjectId</string>
-                  </resultValueClasses>
-                </apiParam>
-                <apiParam group="result" name="sfUiTargetResultScope" title="Result Scope">
-                  <summary>The life-span of the resulting identifiers.</summary>
-                  <type>
-                    <choiceType>
-                      <constraints>
-                        <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
-                      </constraints>
-                    </choiceType>
                   </type>
                 </apiParam>
               </generatedParameters>

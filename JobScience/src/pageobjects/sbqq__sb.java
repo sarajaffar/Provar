@@ -18,7 +18,8 @@ import com.provar.core.testapi.annotations.SteelBrickBy.Facet;
 public class sbqq__sb {
 
 	@TextType()
-	@FindBy(css = "#sbPageContainer/deep/SB-PRODUCT-LOOKUP.--desktop/deep/SB-PAGE-HEADER.--desktop/deep/#plSelect.keyboard-focus/deep/SB-I18N")
+	//@FindBy(css = "#sbPageContainer/deep/SB-PRODUCT-LOOKUP.--desktop/deep/SB-PAGE-HEADER.--desktop/deep/#plSelect.keyboard-focus/deep/SB-I18N")
+	@FindBy(css = "#sbPageContainer/deep/SB-PRODUCT-LOOKUP.--desktop/deep/SB-PAGE-HEADER.--desktop/deep/#plSelect/deep/SB-I18N")
 	public WebElement Select;
 	@TextType()
 	@SteelBrickBy(fieldSetTableItem = "SBQQ__StartDate__c")

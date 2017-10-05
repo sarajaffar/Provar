@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="7">
+<testCase id="15">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
@@ -75,6 +75,9 @@
                         <argument id="Account_Group__cName"/>
                         <argument id="GT">
                           <value class="value" valueClass="string">Multi-Academy Trust</value>
+                        </argument>
+                        <argument id="RecordType">
+                          <value class="value" valueClass="string">School Group</value>
                         </argument>
                       </arguments>
                       <outputArguments>
@@ -642,7 +645,7 @@
                                 <argument id="autoRetry"/>
                               </arguments>
                             </apiCall>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1018" title="Set the Finance Contact reference to sara jaffar">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1018" title="Set the Finance Contact reference to sara">
                               <arguments>
                                 <argument id="locator">
                                   <value class="uiLocator" uri="ui:locator?name=FinanceContact__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__Quote__c%26field%3DFinanceContact__c"/>
@@ -651,7 +654,7 @@
                                   <value class="uiInteraction" uri="ui:interaction?name=set"/>
                                 </argument>
                                 <argument id="value">
-                                  <value class="value" valueClass="string">sara jaffar</value>
+                                  <value class="value" valueClass="string">sara</value>
                                 </argument>
                                 <argument id="blur">
                                   <value class="value" valueClass="boolean">false</value>
@@ -672,7 +675,7 @@
                                   <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="interactionDescription">
-                                  <value class="value" valueClass="string">Set the Finance Contact reference to sara jaffar</value>
+                                  <value class="value" valueClass="string">Set the Finance Contact reference to sara</value>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>
@@ -837,7 +840,7 @@
                                 <argument id="autoRetry"/>
                               </arguments>
                             </apiCall>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1020" title="Set the Primary Contact reference to sara jaffar">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1020" title="Set the Primary Contact reference to sara">
                               <arguments>
                                 <argument id="locator">
                                   <value class="uiLocator" uri="ui:locator?name=SBQQ__PrimaryContact__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__Quote__c%26field%3DSBQQ__PrimaryContact__c"/>
@@ -846,7 +849,7 @@
                                   <value class="uiInteraction" uri="ui:interaction?name=set"/>
                                 </argument>
                                 <argument id="value">
-                                  <value class="value" valueClass="string">sara jaffar</value>
+                                  <value class="value" valueClass="string">sara</value>
                                 </argument>
                                 <argument id="blur">
                                   <value class="value" valueClass="boolean">false</value>
@@ -867,7 +870,7 @@
                                   <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="interactionDescription">
-                                  <value class="value" valueClass="string">Set the Primary Contact reference to sara jaffar</value>
+                                  <value class="value" valueClass="string">Set the Primary Contact reference to sara</value>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>
@@ -1032,7 +1035,7 @@
                                 <argument id="autoRetry"/>
                               </arguments>
                             </apiCall>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1022" title="Set the Contract Decision Maker reference to sara jaffar">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1022" title="Set the Contract Decision Maker reference to sara">
                               <arguments>
                                 <argument id="locator">
                                   <value class="uiLocator" uri="ui:locator?name=ContractDecisionMaker__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__Quote__c%26field%3DContractDecisionMaker__c"/>
@@ -1041,7 +1044,7 @@
                                   <value class="uiInteraction" uri="ui:interaction?name=set"/>
                                 </argument>
                                 <argument id="value">
-                                  <value class="value" valueClass="string">sara jaffar</value>
+                                  <value class="value" valueClass="string">sara</value>
                                 </argument>
                                 <argument id="blur">
                                   <value class="value" valueClass="boolean">false</value>
@@ -1062,7 +1065,7 @@
                                   <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="interactionDescription">
-                                  <value class="value" valueClass="string">Set the Contract Decision Maker reference to sara jaffar</value>
+                                  <value class="value" valueClass="string">Set the Contract Decision Maker reference to sara</value>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>
@@ -1406,6 +1409,57 @@
                                 </apiParam>
                               </generatedParameters>
                             </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1153" title="Click the Inline Edit OK button">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=ileOk&amp;path=View%2FInlineEditDlgButtons"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                </argument>
+                                <argument id="hover">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Click the Inline Edit OK button</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                                <argument id="ieClickMethod">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                  <summary>How the click should be executed for Internet Explorer.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
                             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1032" title="Activate inline edit the Agency Involvement picklist">
                               <arguments>
                                 <argument id="locator">
@@ -1473,6 +1527,68 @@
                                     <choiceType>
                                       <constraints>
                                         <valueConstraint name="boundedValues">Yes - Agency Appointed:Yes - Agency Appointed|Yes - Dual Appointment:Yes - Dual Appointment|Yes - Regional Director Only:Yes - Regional Director Only|No - Direct School:No - Direct School</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1151" title="Set the Preferred Payment Frequency picklist to Monthly">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=Payment_Frequency__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__Quote__c%26field%3DPayment_Frequency__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="value">
+                                  <value class="value" valueClass="string">Monthly</value>
+                                </argument>
+                                <argument id="blur">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="pressEnter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Preferred Payment Frequency picklist to Monthly</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=SBQQ__Quote__c&amp;field=Payment_Frequency__c" name="value" seq="10000" title="Value">
+                                  <summary>The value to be populated.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="boundedValues">One-off:One-off|Monthly:Monthly|Quarterly:Quarterly|Annually:Annually</valueConstraint>
                                       </constraints>
                                     </choiceType>
                                   </type>

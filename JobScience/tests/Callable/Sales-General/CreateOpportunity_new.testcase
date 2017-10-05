@@ -113,9 +113,7 @@
           </value>
         </argument>
         <argument argId="28b6d248-0260-4443-b902-6167c1768511" id="RecordType">
-          <value class="variable">
-            <path element="RecordType"/>
-          </value>
+          <value class="value" valueClass="string">School Group</value>
         </argument>
       </arguments>
       <outputArguments>

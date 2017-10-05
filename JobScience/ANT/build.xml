@@ -1,6 +1,6 @@
 <project default="runtests">
 	<property environment="env"/>
-	<property name="provar.home" value="C:/Program Files/Provar_builds/Provar_v1.8.10.22/"/>
+	<property name="provar.home" value="C:/Program Files/Provar_builds/Provar_v1.8.11.22/"/>
 	<property name="testproject.home" value=".."/>
 	<property name="testproject.results" value="../ANT/Results"/>
 	
@@ -27,9 +27,9 @@
 				invokeTestRunMonitor="true"
 				>
 		
-			<fileset dir="../tests/TestSuite/Sales-General/Contacts"></fileset>
+			<fileset dir="../tests/TestSuite/Sales-General"></fileset>
 
-			<emailProperties sendEmail="true" primaryRecipients="sara.jaffar@tesglobal.com" ccRecipients="" bccRecipients="" emailSubject="Provar test run report" attachExecutionReport="false" attachZip="false"/>
+			<emailProperties sendEmail="true" primaryRecipients="sara.jaffar@tesglobal.com" ccRecipients="abn@tesglobal.com" bccRecipients="" emailSubject="Provar test run report" attachExecutionReport="false" attachZip="false"/>
 		</Run-Test-Case>
 
 	</target>
