@@ -475,7 +475,7 @@
                 </argument>
                 <argument id="sfUiTargetObjectId">
                   <value class="variable">
-                    <path element="OppID"/>
+                    <path element="OpportunityId"/>
                   </value>
                 </argument>
                 <argument id="EN">

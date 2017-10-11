@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="15">
+<testCase id="6">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
@@ -61,7 +61,28 @@
               <clauses>
                 <clause name="hidden" testItemId="171">
                   <steps>
-                    <caseCall testCaseId="7a9cdb31-c852-4464-a1f6-ab34d08fa7e4" testItemId="173">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="1172">
+                      <arguments>
+                        <argument id="reuseConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="RecordTypeId">
+                          <value class="value" valueClass="string">Master Account</value>
+                        </argument>
+                      </arguments>
+                      <outputArguments>
+                        <outputArgument id="AccountRowsID">
+                          <name class="value" valueClass="string">AccountRowsID</name>
+                        </outputArgument>
+                        <outputArgument id="AccountId">
+                          <name class="value" valueClass="string">AccountId</name>
+                        </outputArgument>
+                      </outputArguments>
+                    </caseCall>
+                    <caseCall testCaseId="7a9cdb31-c852-4464-a1f6-ab34d08fa7e4" testItemId="1174">
+                      <tags>
+                        <string>disabled</string>
+                      </tags>
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -86,6 +107,101 @@
                         </outputArgument>
                       </outputArguments>
                     </caseCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="1175" title="Create Object: Opportunity=&gt;OpportunityId">
+                      <arguments>
+                        <argument id="objectType">
+                          <value class="value" valueClass="string">Opportunity</value>
+                        </argument>
+                        <argument id="resultIdName">
+                          <value class="value" valueClass="string">OpportunityId</value>
+                        </argument>
+                        <argument id="apexConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument argId="311a6862-6807-4be4-86a3-566acfed6e2a" id="AccountId">
+                          <value class="variable">
+                            <path element="AccountId"/>
+                          </value>
+                        </argument>
+                        <argument id="RecordTypeId">
+                          <value class="value" valueClass="string">Subscription Opportunity</value>
+                        </argument>
+                        <argument id="Name">
+                          <value class="value" valueClass="string">ProvarTest V3GI Group Recruitment Subs</value>
+                        </argument>
+                        <argument argId="dd8f7573-8ec0-484d-ad16-90606fe60716" id="StageName">
+                          <value class="variable">
+                            <path element="StageName"/>
+                          </value>
+                        </argument>
+                        <argument id="CloseDate">
+                          <value class="funcCall" id="DateAdd">
+                            <argument id="date">
+                              <value class="variable">
+                                <path element="TODAY"/>
+                              </value>
+                            </argument>
+                            <argument id="amount">
+                              <value class="value" valueClass="decimal">1</value>
+                            </argument>
+                          </value>
+                        </argument>
+                        <argument id="LeadSource">
+                          <value class="value" valueClass="string">Agency</value>
+                        </argument>
+                        <argument id="ForecastCategoryName">
+                          <value class="value" valueClass="string">Pipeline</value>
+                        </argument>
+                        <argument id="CurrencyIsoCode">
+                          <value class="value" valueClass="string">GBP</value>
+                        </argument>
+                        <argument id="Discount__c">
+                          <value class="value" valueClass="decimal">0.0</value>
+                        </argument>
+                        <argument id="Customer_Intention__c">
+                          <value class="value" valueClass="string">N/A - Yet To Attempt To Contact School</value>
+                        </argument>
+                        <argument id="Total_Number_of_Calls__c">
+                          <value class="value" valueClass="decimal">0.0</value>
+                        </argument>
+                        <argument id="Subscription_Type__c">
+                          <value class="value" valueClass="string">First Time Buyer</value>
+                        </argument>
+                        <argument id="assignmentRuleId"/>
+                        <argument id="resultScope">
+                          <value class="value" valueClass="string">Test</value>
+                        </argument>
+                        <argument id="Agency_Involvement__c">
+                          <value class="value" valueClass="string">No - Direct School</value>
+                        </argument>
+                        <argument id="Customer_Journey_Type__c">
+                          <value class="value" valueClass="string">Authorised</value>
+                        </argument>
+                      </arguments>
+                      <parameterValueSources/>
+                      <parameterGeneratorProperties>
+                        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
+                        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+                      </parameterGeneratorProperties>
+                      <generatedParameters>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=AccountId" name="AccountId" title="AccountId"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=LeadSource" name="LeadSource" title="LeadSource"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=ForecastCategoryName" name="ForecastCategoryName" title="ForecastCategoryName"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CurrencyIsoCode" name="CurrencyIsoCode" title="CurrencyIsoCode"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Discount__c" name="Discount__c" title="Discount__c"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Customer_Intention__c" name="Customer_Intention__c" title="Customer_Intention__c"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Total_Number_of_Calls__c" name="Total_Number_of_Calls__c" title="Total_Number_of_Calls__c">
+                          <summary>Number of Calls logged against this Opportunity</summary>
+                        </apiParam>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Subscription_Type__c" name="Subscription_Type__c" title="Subscription_Type__c"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Agency_Involvement__c" name="Agency_Involvement__c" title="Agency_Involvement__c"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Customer_Journey_Type__c" name="Customer_Journey_Type__c" title="Customer_Journey_Type__c"/>
+                      </generatedParameters>
+                    </apiCall>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="187" title="SOQL Query: select AccountId from Opportunity where Id='{OpportunityId}'=&gt;OpportunityRows">
                       <arguments>
                         <argument id="soqlQuery">
@@ -1314,6 +1430,9 @@
                               </arguments>
                             </apiCall>
                             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1029" title="Double Click the Preferred Payment Frequency picklist">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
                               <arguments>
                                 <argument id="locator">
                                   <value class="uiLocator" uri="ui:locator?name=Payment_Frequency__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__Quote__c%26field%3DPayment_Frequency__c"/>
@@ -1366,6 +1485,68 @@
                                 </argument>
                                 <argument id="pressEnter">
                                   <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Preferred Payment Frequency picklist to Monthly</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=SBQQ__Quote__c&amp;field=Payment_Frequency__c" name="value" seq="10000" title="Value">
+                                  <summary>The value to be populated.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="boundedValues">One-off:One-off|Monthly:Monthly|Quarterly:Quarterly|Annually:Annually</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1154" title="Set the Preferred Payment Frequency picklist to Monthly">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=Payment_Frequency__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__Quote__c%26field%3DPayment_Frequency__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="value">
+                                  <value class="value" valueClass="string">Monthly</value>
+                                </argument>
+                                <argument id="blur">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="pressEnter">
+                                  <value class="value" valueClass="boolean">false</value>
                                 </argument>
                                 <argument id="captureBefore">
                                   <value class="value" valueClass="boolean">false</value>
@@ -1746,6 +1927,9 @@
                               </generatedParameters>
                             </apiCall>
                             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1037" title="Click the Generate Document button">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
                               <arguments>
                                 <argument id="locator">
                                   <value class="uiLocator" uri="ui:locator?name=SBQQ__Generate_Document&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__Quote__c%26action%3DSBQQ__Generate_Document"/>
@@ -1822,6 +2006,9 @@
                 <clause name="hidden" testItemId="1056">
                   <steps>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1057" title="On SF Quote View screen">
+                      <tags>
+                        <string>disabled</string>
+                      </tags>
                       <arguments>
                         <argument id="uiConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -1856,6 +2043,9 @@
                         <clause name="substeps" testItemId="1058">
                           <steps>
                             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1081" title="On SF SBQQ__GenerateDocument page with pageobject Sbqq__ Generate Document">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
                               <arguments>
                                 <argument id="uiConnectionName">
                                   <value class="value" valueClass="string">JobScience</value>
@@ -1864,7 +2054,7 @@
                                   <value class="uiTarget" uri="sf:ui:target?page=SBQQ__GenerateDocument&amp;pageObject=pageobjects.sbqq__GenerateDocument"/>
                                 </argument>
                                 <argument id="navigate">
-                                  <value class="value" valueClass="string">Dont</value>
+                                  <value class="value" valueClass="string">Always</value>
                                 </argument>
                                 <argument id="targetDescription">
                                   <value class="value" valueClass="string">On SF SBQQ__GenerateDocument page with pageobject Sbqq__ Generate Document</value>
@@ -1913,12 +2103,26 @@
                                           <value class="value" valueClass="string">Click the Send With Docu Sign button</value>
                                         </argument>
                                         <argument id="autoRetry"/>
+                                        <argument id="ieClickMethod">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
                                       </arguments>
                                       <generatedParameters>
-                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                                           <type>
                                             <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                          <summary>How the click should be executed for Internet Explorer.</summary>
+                                          <type>
+                                            <choiceType>
+                                              <constraints>
+                                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                              </constraints>
+                                            </choiceType>
                                           </type>
                                         </apiParam>
                                       </generatedParameters>
@@ -1928,6 +2132,9 @@
                               </clauses>
                             </apiCall>
                             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1084" title="On SF Quote Document View screen">
+                              <tags>
+                                <string>disabled</string>
+                              </tags>
                               <arguments>
                                 <argument id="uiConnectionName">
                                   <value class="value" valueClass="string">JobScience</value>
@@ -2018,57 +2225,6 @@
                                         </apiParam>
                                       </generatedParameters>
                                     </apiCall>
-                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1087" title="Click the SaveEdit button">
-                                      <arguments>
-                                        <argument id="locator">
-                                          <value class="uiLocator" uri="ui:locator?name=SaveEdit&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__QuoteDocument__c%26action%3DSaveEdit"/>
-                                        </argument>
-                                        <argument id="interaction">
-                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
-                                        </argument>
-                                        <argument id="hover">
-                                          <value class="value" valueClass="boolean">false</value>
-                                        </argument>
-                                        <argument id="captureBefore">
-                                          <value class="value" valueClass="boolean">false</value>
-                                        </argument>
-                                        <argument id="captureAfter">
-                                          <value class="value" valueClass="boolean">false</value>
-                                        </argument>
-                                        <argument id="beforeWait">
-                                          <value class="uiWait" uri="default"/>
-                                        </argument>
-                                        <argument id="afterWait">
-                                          <value class="uiWait" uri="default"/>
-                                        </argument>
-                                        <argument id="interactionDescription">
-                                          <value class="value" valueClass="string">Click the SaveEdit button</value>
-                                        </argument>
-                                        <argument id="autoRetry"/>
-                                        <argument id="ieClickMethod">
-                                          <value class="value" valueClass="string">Default</value>
-                                        </argument>
-                                      </arguments>
-                                      <generatedParameters>
-                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
-                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
-                                          <type>
-                                            <booleanType/>
-                                          </type>
-                                        </apiParam>
-                                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
-                                          <summary>How the click should be executed for Internet Explorer.</summary>
-                                          <type>
-                                            <choiceType>
-                                              <constraints>
-                                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
-                                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
-                                              </constraints>
-                                            </choiceType>
-                                          </type>
-                                        </apiParam>
-                                      </generatedParameters>
-                                    </apiCall>
                                   </steps>
                                 </clause>
                               </clauses>
@@ -2077,6 +2233,397 @@
                                   <summary>The Id of the SF Object to be Viewed or Edited.</summary>
                                   <type>
                                     <textType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1155" title="On SF Quote Document View screen">
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">JobScience</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="sf:ui:target?object=SBQQ__QuoteDocument__c&amp;action=View"/>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Always</value>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On SF Quote Document View screen</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId">
+                          <value class="value" valueClass="string">a6W260000000If7EAE</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="1156">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1160" title="Activate inline edit the Signed Date field">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=SBQQDS__SignedDate__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__QuoteDocument__c%26field%3DSBQQDS__SignedDate__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=sfIleActivate"/>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Activate inline edit the Signed Date field</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1162" title="Set the Signed Date field to {TODAY}">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=SBQQDS__SignedDate__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__QuoteDocument__c%26field%3DSBQQDS__SignedDate__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="value">
+                                  <value class="variable">
+                                    <path element="TODAY"/>
+                                  </value>
+                                </argument>
+                                <argument id="blur">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="pressEnter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Signed Date field to {TODAY}</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=SBQQ__QuoteDocument__c&amp;field=SBQQDS__SignedDate__c" name="value" seq="10000" title="Value">
+                                  <summary>The value to be populated.</summary>
+                                  <type>
+                                    <dateType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1163" title="Activate inline edit the Electronic Signature field">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=SBQQ__ElectronicSignature__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__QuoteDocument__c%26field%3DSBQQ__ElectronicSignature__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=sfIleActivate"/>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Activate inline edit the Electronic Signature field</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1158" title="Check the Electronic Signature field">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=SBQQ__ElectronicSignature__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__QuoteDocument__c%26field%3DSBQQ__ElectronicSignature__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=check"/>
+                                </argument>
+                                <argument id="blur">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="pressEnter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Check the Electronic Signature field</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                                <argument id="ieClickMethod">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="ieClickMethod" seq="10000" title="IE Click Method">
+                                  <summary>How the click should be executed for Internet Explorer.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1164" title="Activate inline edit the Signature Status picklist">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=SBQQ__SignatureStatus__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__QuoteDocument__c%26field%3DSBQQ__SignatureStatus__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=sfIleActivate"/>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Activate inline edit the Signature Status picklist</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1157" title="Set the Signature Status picklist to Signed">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=SBQQ__SignatureStatus__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__QuoteDocument__c%26field%3DSBQQ__SignatureStatus__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="value">
+                                  <value class="value" valueClass="string">Signed</value>
+                                </argument>
+                                <argument id="blur">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="pressEnter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Signature Status picklist to Signed</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=SBQQ__QuoteDocument__c&amp;field=SBQQ__SignatureStatus__c" name="value" seq="10000" title="Value">
+                                  <summary>The value to be populated.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="boundedValues">Pending:Pending|Sent:Sent|Signed:Signed|Expired:Expired|Revoked:Revoked</valueConstraint>
+                                        <valueConstraint name="unrestricted">true</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1167" title="Click the SaveEdit button">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=SaveEdit&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__QuoteDocument__c%26action%3DSaveEdit"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                </argument>
+                                <argument id="hover">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="ui:wait:pageload?timeout=60"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Click the SaveEdit button</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                                <argument id="ieClickMethod">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                  <summary>How the click should be executed for Internet Explorer.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1170" title="Click the Opportunity reference">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=SBQQ__Opportunity__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DSBQQ__QuoteDocument__c%26field%3DSBQQ__Opportunity__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                </argument>
+                                <argument id="hover">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="ui:wait:pageload?timeout=60"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Click the Opportunity reference</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                                <argument id="ieClickMethod">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                  <summary>How the click should be executed for Internet Explorer.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
                                   </type>
                                 </apiParam>
                               </generatedParameters>
@@ -2263,7 +2810,9 @@
                                                 <argument id="pageAssertions">
                                                   <value class="valueList" mutable="Mutable"/>
                                                 </argument>
-                                                <argument id="beforeWait"/>
+                                                <argument id="beforeWait">
+                                                  <value class="uiWait" uri="ui:wait:pageload?timeout=60"/>
+                                                </argument>
                                                 <argument id="autoRetry"/>
                                               </arguments>
                                             </apiCall>
@@ -2285,7 +2834,7 @@
                                                   <value class="value" valueClass="boolean">false</value>
                                                 </argument>
                                                 <argument id="beforeWait">
-                                                  <value class="uiWait" uri="default"/>
+                                                  <value class="uiWait" uri="ui:wait:pageload?timeout=60"/>
                                                 </argument>
                                                 <argument id="afterWait">
                                                   <value class="uiWait" uri="default"/>
@@ -2449,7 +2998,10 @@
                                               <fieldLocator uri="ui:locator?name=AccountId&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DContract%26field%3DAccountId"/>
                                               <attributeAssertions>
                                                 <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
-                                                  <value class="value" valueClass="string">ProvarTest OYLF</value>
+                                                  <value class="variable">
+                                                    <path element="AccountRows"/>
+                                                    <path element="Name"/>
+                                                  </value>
                                                 </uiAttributeAssertion>
                                               </attributeAssertions>
                                             </uiFieldAssertion>

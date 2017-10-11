@@ -251,10 +251,10 @@
                           <value class="value" valueClass="string">Lookup the Account reference</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
@@ -351,9 +351,7 @@
                               </generatedParameters>
                             </apiCall>
                             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="29" title="Click the Go! button">
-                              <tags>
-                                <string>disabled</string>
-                              </tags>
+                              <tags/>
                               <arguments>
                                 <argument id="locator">
                                   <value class="uiLocator" uri="ui:locator?name=go&amp;path=searchFrame"/>
@@ -377,7 +375,7 @@
                                   <value class="uiWait" uri="ui:wait:timed?seconds=10"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" uri="default"/>
+                                  <value class="uiWait" uri="ui:wait:pageload?timeout=60"/>
                                 </argument>
                                 <argument id="autoRetry">
                                   <value class="uiWait" uri="default"/>
@@ -539,10 +537,10 @@
                           <value class="value" valueClass="string">Click the Save button</value>
                         </argument>
                         <argument id="afterWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="ieClickMethod">
                           <value class="value" valueClass="string">Default</value>

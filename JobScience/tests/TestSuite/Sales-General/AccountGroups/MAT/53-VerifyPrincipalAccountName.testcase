@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="24">
+<testCase id="4">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: IanHoy (Test)">
@@ -281,7 +281,7 @@
                       <clauses>
                         <clause name="substeps" testItemId="254">
                           <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="256" title="Click the Account Group Name link">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="256" title="Click the Group Name field">
                               <arguments>
                                 <argument id="locator">
                                   <value class="uiLocator" uri="ui:locator?name=Name"/>
@@ -290,9 +290,8 @@
                                   <value class="uiInteraction" uri="ui:interaction?name=action"/>
                                 </argument>
                                 <argument id="interactionDescription">
-                                  <value class="value" valueClass="string">Click the Account Group Name link</value>
+                                  <value class="value" valueClass="string">Click the Group Name field</value>
                                 </argument>
-                                <argument id="wait"/>
                                 <argument id="captureBefore">
                                   <value class="value" valueClass="string">false</value>
                                 </argument>
@@ -300,12 +299,33 @@
                                   <value class="value" valueClass="string">full</value>
                                 </argument>
                                 <argument id="hover"/>
+                                <argument id="afterWait">
+                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                </argument>
+                                <argument id="ieClickMethod">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="autoRetry"/>
                               </arguments>
                               <generatedParameters>
                                 <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                                   <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                                   <type>
                                     <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                  <summary>How the click should be executed for Internet Explorer.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
                                   </type>
                                 </apiParam>
                               </generatedParameters>
@@ -554,7 +574,7 @@
                           <value class="valueList" mutable="Mutable"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="autoRetry"/>
                       </arguments>
