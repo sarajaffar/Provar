@@ -419,7 +419,7 @@
                           <value class="uiWait" uri="ui:wait:pageload?timeout=60"/>
                         </argument>
                         <argument id="beforeWait">
-                          <value class="uiWait" created="0" updated="0" uri="default"/>
+                          <value class="uiWait" uri="default"/>
                         </argument>
                         <argument id="ieClickMethod">
                           <value class="value" valueClass="string">Default</value>
@@ -1801,7 +1801,7 @@
                       <clauses>
                         <clause name="substeps" testItemId="447">
                           <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="448" title="With View/Opportunities/OpportunitiesTable {1}">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="448" title="With Opportunities rows {1}">
                               <arguments>
                                 <argument id="uiConnectionName">
                                   <value class="value" valueClass="string">JessicaMarshall</value>
@@ -1813,7 +1813,7 @@
                                   <value class="value" valueClass="decimal">1</value>
                                 </argument>
                                 <argument id="locatorDescription">
-                                  <value class="value" valueClass="string">With View/Opportunities/OpportunitiesTable {1}</value>
+                                  <value class="value" valueClass="string">With Opportunities rows {1}</value>
                                 </argument>
                                 <argument id="failIfNotFound">
                                   <value class="value" valueClass="boolean">true</value>
@@ -1825,6 +1825,7 @@
                                 <argument id="resultScope">
                                   <value class="value" valueClass="string">Local</value>
                                 </argument>
+                                <argument id="autoPaginate"/>
                               </arguments>
                               <clauses>
                                 <clause name="substeps" testItemId="449">
@@ -1840,7 +1841,7 @@
                                         <argument id="fieldAssertions">
                                           <value class="valueList" mutable="Mutable">
                                             <uiFieldAssertion resultName="OPPORTUNITY_NAME">
-                                              <fieldLocator uri="ui:locator?name=OPPORTUNITY_NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DContract%26field%3DNAME%26relationship%3DOpportunities"/>
+                                              <fieldLocator uri="ui:locator?name=OPPORTUNITY_NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DContract%26field%3DOPPORTUNITY.NAME%26relationship%3DOpportunities"/>
                                               <attributeAssertions>
                                                 <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
                                                   <value class="variable">
@@ -1870,6 +1871,14 @@
                                   </steps>
                                 </clause>
                               </clauses>
+                              <generatedParameters>
+                                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
                             </apiCall>
                           </steps>
                         </clause>

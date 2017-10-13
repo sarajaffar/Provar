@@ -19,5 +19,8 @@ public class sbqq__GenerateDocument {
 	@ButtonType()
 	@FindByLabel(label = "Send with DocuSign")
 	public WebElement sendWithDocuSign;
+	@ButtonType()
+	@FindByLabel(label = "Save")
+	public WebElement save;
 	
 }
