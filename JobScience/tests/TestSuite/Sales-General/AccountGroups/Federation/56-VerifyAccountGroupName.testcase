@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="0">
+<testCase id="1">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="302" title="Admin Connection">
@@ -71,7 +71,7 @@
                       <clauses>
                         <clause name="hidden" testItemId="341">
                           <steps>
-                            <caseCall testCaseId="7a9cdb31-c852-4464-a1f6-ab34d08fa7e4" testItemId="342">
+                            <caseCall testCaseId="7a9cdb31-c852-4464-a1f6-ab34d08fa7e4" testCasePath="tests/Callable/Sales-General/CreateOpportunity_new.testcase" testItemId="342">
                               <arguments>
                                 <argument id="reuseConnectionName">
                                   <value class="value" valueClass="string">JobScience</value>
@@ -274,10 +274,10 @@
                                 </argument>
                                 <argument id="hover"/>
                                 <argument id="afterWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry"/>
                                 <argument id="ieClickMethod">
@@ -368,10 +368,10 @@
                                   <value class="value" valueClass="string">Click the Continue button</value>
                                 </argument>
                                 <argument id="afterWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="ieClickMethod">
                                   <value class="value" valueClass="string">Default</value>
@@ -453,7 +453,7 @@
                       <clauses>
                         <clause name="substeps" testItemId="364">
                           <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="365" title="VerifyAccountGroupName">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="369" title="VerifyAccountGroupName">
                               <arguments>
                                 <argument id="resultName">
                                   <value class="value" valueClass="string">Values</value>
@@ -463,8 +463,8 @@
                                 </argument>
                                 <argument id="fieldAssertions">
                                   <value class="valueList" mutable="Mutable">
-                                    <uiFieldAssertion resultName="AccountId">
-                                      <fieldLocator uri="ui:locator?name=AccountId&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DAccountId"/>
+                                    <uiFieldAssertion resultName="Account_Group__c">
+                                      <fieldLocator uri="ui:locator?name=Account_Group__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DAccount_Group__c"/>
                                       <attributeAssertions>
                                         <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
                                           <value class="variable">
@@ -477,7 +477,7 @@
                                   </value>
                                 </argument>
                                 <argument id="captureAfter">
-                                  <value class="value" valueClass="string">true</value>
+                                  <value class="value" valueClass="boolean">false</value>
                                 </argument>
                                 <argument id="columnAssertions">
                                   <value class="valueList" mutable="Mutable"/>
@@ -485,9 +485,7 @@
                                 <argument id="pageAssertions">
                                   <value class="valueList" mutable="Mutable"/>
                                 </argument>
-                                <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
-                                </argument>
+                                <argument id="beforeWait"/>
                                 <argument id="autoRetry"/>
                               </arguments>
                             </apiCall>

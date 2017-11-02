@@ -63,7 +63,7 @@
               <clauses>
                 <clause name="hidden" testItemId="82">
                   <steps>
-                    <caseCall testCaseId="a663b75c-a617-4faa-a190-58c45769c40f" testItemId="83">
+                    <caseCall testCaseId="a663b75c-a617-4faa-a190-58c45769c40f" testCasePath="tests/Callable/THE/CreateLead.testcase" testItemId="83">
                       <tags/>
                       <arguments>
                         <argument id="reuseConnectionName">
@@ -1034,7 +1034,7 @@
               <clauses>
                 <clause name="hidden" testItemId="350">
                   <steps>
-                    <caseCall testCaseId="9e552559-877d-4bcd-9a46-f0729480c13e" testItemId="351">
+                    <caseCall testCaseId="9e552559-877d-4bcd-9a46-f0729480c13e" testCasePath="tests/Callable/THE/AddProduct.testcase" testItemId="351">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JessicaMarshall</value>

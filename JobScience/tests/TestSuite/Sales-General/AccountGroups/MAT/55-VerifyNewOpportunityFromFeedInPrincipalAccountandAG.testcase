@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="0">
+<testCase id="9">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: IanHoy (Test)">
@@ -104,7 +104,7 @@
               <clauses>
                 <clause name="hidden" testItemId="233">
                   <steps>
-                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="340">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testCasePath="tests/Callable/Sales-General/CreateAccount.testcase" testItemId="340">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -124,7 +124,7 @@
                         </outputArgument>
                       </outputArguments>
                     </caseCall>
-                    <caseCall testCaseId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" testItemId="305">
+                    <caseCall testCaseId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" testCasePath="tests/Callable/Sales-General/CreateAccountGroup.testcase" testItemId="305">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -364,7 +364,7 @@
               <clauses>
                 <clause name="hidden" testItemId="331">
                   <steps>
-                    <caseCall testCaseId="fb9f37fd-8296-4c15-bd57-5c243854cbe6" testItemId="291">
+                    <caseCall testCaseId="fb9f37fd-8296-4c15-bd57-5c243854cbe6" testCasePath="tests/Callable/Sales-General/CreateOpportunityUI.testcase" testItemId="291">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">IanHoy</value>
@@ -607,6 +607,57 @@
                                 <argument id="beforeWait"/>
                                 <argument id="autoRetry"/>
                               </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="341" title="Click the Principal Account reference">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=Principal_Account__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount_Group__c%26field%3DPrincipal_Account__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                </argument>
+                                <argument id="hover">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureBefore">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="beforeWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="afterWait">
+                                  <value class="uiWait" uri="default"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Click the Principal Account reference</value>
+                                </argument>
+                                <argument id="autoRetry"/>
+                                <argument id="ieClickMethod">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                  <summary>How the click should be executed for Internet Explorer.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
                             </apiCall>
                           </steps>
                         </clause>

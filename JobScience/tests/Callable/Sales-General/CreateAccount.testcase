@@ -79,6 +79,9 @@
       </arguments>
     </apiCall>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="4" title="Create Object: Account=&gt;AccountId">
+      <tags>
+        <string>disabled</string>
+      </tags>
       <arguments>
         <argument id="objectType">
           <value class="value" valueClass="string">Account</value>
@@ -203,6 +206,79 @@
         </apiParam>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Conversion_Record_Type__c" name="Conversion_Record_Type__c" title="Conversion_Record_Type__c"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Verified__c" name="Verified__c" title="Verified__c"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="8" title="Create Object: Account=&gt;AccountId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Account</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">AccountId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">JobScience</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="Name">
+          <value class="variable">
+            <path element="AccountName"/>
+          </value>
+        </argument>
+        <argument id="RecordTypeId">
+          <value class="value" valueClass="string">Master Account</value>
+        </argument>
+        <argument id="Invoice_Name__c">
+          <value class="value" valueClass="string">ASD TEST 123</value>
+        </argument>
+        <argument id="Account_Use_Type__c">
+          <value class="value" valueClass="string">Bill To Only</value>
+        </argument>
+        <argument id="Address_Address_1__c">
+          <value class="value" valueClass="string">123</value>
+        </argument>
+        <argument id="Lat_Long__Latitude__s">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="Lat_Long__Longitude__s">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="Location__c"/>
+        <argument id="Customer_Group__c">
+          <value class="value" valueClass="string">Academy Sponsor</value>
+        </argument>
+        <argument id="Organisation_Group__c">
+          <value class="value" valueClass="string">Charity</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Account</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Invoice_Name__c" name="Invoice_Name__c" title="Invoice_Name__c">
+          <summary>Limited to 60 characters. CAPITAL LETTERS ONLY</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Account_Use_Type__c" name="Account_Use_Type__c" title="Account_Use_Type__c">
+          <summary>Identifies where account can be used for SOP</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Address_Address_1__c" name="Address_Address_1__c" title="Address_Address_1__c">
+          <summary>Limited to 30 characters</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Latitude__s" name="Lat_Long__Latitude__s" title="Lat_Long__Latitude__s"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Lat_Long__Longitude__s" name="Lat_Long__Longitude__s" title="Lat_Long__Longitude__s"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Location__c" name="Location__c" title="Location__c">
+          <summary>UK - Select LA  / Australia - Select State / Other - Select Country</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Customer_Group__c" name="Customer_Group__c" title="Customer_Group__c">
+          <summary>MSL Data field</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Organisation_Group__c" name="Organisation_Group__c" title="Organisation_Group__c"/>
       </generatedParameters>
     </apiCall>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="5" title="SOQL Query: select Account_Id__c,Name from Account where Id='{AccountId}'=&gt;AccountRowsID">

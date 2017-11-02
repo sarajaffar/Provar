@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<lockManagerState class="lockManagerState" leaseIdSeq="4576">
+<lockManagerState class="lockManagerState" leaseIdSeq="4841">
   <lockManagers>
-    <mananger guid="97732e6c-edda-4d19-a146-d6be054108c7" ip="localhost" name="Provar" port="1380"/>
+    <mananger guid="0b1bce53-4679-4cf7-984d-a9d58510c0f6" ip="localhost" name="Provar" port="19787"/>
   </lockManagers>
-  <resourceMap/>
+  <resourceMap>
+    <entry>
+      <key valueClass="string">testproject/validation</key>
+      <value valueClass="list">
+        <lease granted="1509619795692" id="4841" lockManagerId="0b1bce53-4679-4cf7-984d-a9d58510c0f6" requestId="71781" requested="1509619795692" taskName="Validating 41-VerifyCallTypePIcklistValues.testcase" threadId="Worker-25" totalWork="138"/>
+      </value>
+    </entry>
+  </resourceMap>
 </lockManagerState>

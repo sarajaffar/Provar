@@ -71,7 +71,7 @@
         </argument>
       </arguments>
     </apiCall>
-    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="31">
+    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testCasePath="tests/Callable/Sales-General/CreateAccount.testcase" testItemId="31">
       <tags/>
       <arguments>
         <argument id="reuseConnectionName">
@@ -90,7 +90,7 @@
         </outputArgument>
       </outputArguments>
     </caseCall>
-    <caseCall testCaseId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" testItemId="26">
+    <caseCall testCaseId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" testCasePath="tests/Callable/Sales-General/CreateAccountGroup.testcase" testItemId="26">
       <tags/>
       <arguments>
         <argument id="reuseConnectionName">
