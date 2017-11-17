@@ -63,7 +63,7 @@
               <clauses>
                 <clause name="hidden" testItemId="171">
                   <steps>
-                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="1172">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testCasePath="tests/Callable/Sales-General/CreateAccount.testcase" testItemId="1172">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -96,9 +96,6 @@
                           <value class="variable">
                             <path element="AccountId"/>
                           </value>
-                        </argument>
-                        <argument id="RecordTypeId">
-                          <value class="value" valueClass="string">Subscription Opportunity</value>
                         </argument>
                         <argument id="Name">
                           <value class="value" valueClass="string">ProvarTest V3GI Group Recruitment Subs</value>
@@ -149,6 +146,9 @@
                         <argument id="Customer_Journey_Type__c">
                           <value class="value" valueClass="string">Authorised</value>
                         </argument>
+                        <argument id="RecordTypeId">
+                          <value class="value" valueClass="string">012w0000000V1DFAA0</value>
+                        </argument>
                       </arguments>
                       <parameterValueSources/>
                       <parameterGeneratorProperties>
@@ -157,7 +157,6 @@
                       </parameterGeneratorProperties>
                       <generatedParameters>
                         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=AccountId" name="AccountId" title="AccountId"/>
-                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
                         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
                         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
                         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
@@ -172,6 +171,7 @@
                         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Subscription_Type__c" name="Subscription_Type__c" title="Subscription_Type__c"/>
                         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Agency_Involvement__c" name="Agency_Involvement__c" title="Agency_Involvement__c"/>
                         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Customer_Journey_Type__c" name="Customer_Journey_Type__c" title="Customer_Journey_Type__c"/>
+                        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
                       </generatedParameters>
                     </apiCall>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="187" title="SOQL Query: select AccountId from Opportunity where Id='{OpportunityId}'=&gt;OpportunityRows">
@@ -266,7 +266,7 @@
               <clauses>
                 <clause name="hidden" testItemId="210">
                   <steps>
-                    <caseCall testCaseId="770db1d3-5164-4598-a206-1e27fdb8d3ce" testItemId="194">
+                    <caseCall testCaseId="770db1d3-5164-4598-a206-1e27fdb8d3ce" testCasePath="tests/Callable/Sales-General/AddProduct.testcase" testItemId="194">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -302,7 +302,7 @@
               <clauses>
                 <clause name="hidden" testItemId="901">
                   <steps>
-                    <caseCall testCaseId="75c48f19-b9af-4e36-8fe9-5040496d0775" testItemId="902">
+                    <caseCall testCaseId="75c48f19-b9af-4e36-8fe9-5040496d0775" testCasePath="tests/Callable/CPQ/AddQuote.testcase" testItemId="902">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -330,7 +330,7 @@
               <clauses>
                 <clause name="hidden" testItemId="748">
                   <steps>
-                    <caseCall testCaseId="772a5d43-eb54-4bd8-9127-5d0aa83f32ad" testItemId="1249">
+                    <caseCall testCaseId="772a5d43-eb54-4bd8-9127-5d0aa83f32ad" testCasePath="tests/Callable/CPQ/AddSubscription.testcase" testItemId="1249">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>

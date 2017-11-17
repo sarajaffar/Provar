@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="3">
+<testCase id="20">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: JobScience (Test)">
@@ -62,7 +62,7 @@
               <clauses>
                 <clause name="hidden" testItemId="52">
                   <steps>
-                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="154">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testCasePath="tests/Callable/Sales-General/CreateAccount.testcase" testItemId="154">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -423,6 +423,9 @@
                           <value class="value" valueClass="string">Activate inline edit the Location reference</value>
                         </argument>
                         <argument id="wait"/>
+                        <argument id="beforeWait"/>
+                        <argument id="afterWait"/>
+                        <argument id="autoRetry"/>
                       </arguments>
                     </apiCall>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="113" title="Set the Location reference to London">
@@ -452,6 +455,9 @@
                           <value class="value" valueClass="string">Set the Location reference to London</value>
                         </argument>
                         <argument id="wait"/>
+                        <argument id="beforeWait"/>
+                        <argument id="afterWait"/>
+                        <argument id="autoRetry"/>
                       </arguments>
                       <generatedParameters>
                         <apiParam group="value" modelBinding="sf:ui:binding:object?object=Account&amp;field=Location__c" name="value" seq="10000" title="Value">
@@ -492,6 +498,9 @@
                           <value class="value" valueClass="string">Lookup the Location reference</value>
                         </argument>
                         <argument id="wait"/>
+                        <argument id="beforeWait"/>
+                        <argument id="afterWait"/>
+                        <argument id="autoRetry"/>
                       </arguments>
                     </apiCall>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="115" title="On SF Location Lookup screen">
@@ -559,6 +568,61 @@
                           </steps>
                         </clause>
                       </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="155" title="Set the Reason Duplicate picklist to No">
+                      <arguments>
+                        <argument id="locator">
+                          <value class="uiLocator" uri="ui:locator?name=Reason_Duplicate__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DReason_Duplicate__c"/>
+                        </argument>
+                        <argument id="interaction">
+                          <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                        </argument>
+                        <argument id="value">
+                          <value class="value" valueClass="string">No</value>
+                        </argument>
+                        <argument id="blur">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="pressEnter">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="beforeWait">
+                          <value class="uiWait" uri="default"/>
+                        </argument>
+                        <argument id="afterWait">
+                          <value class="uiWait" uri="default"/>
+                        </argument>
+                        <argument id="interactionDescription">
+                          <value class="value" valueClass="string">Set the Reason Duplicate picklist to No</value>
+                        </argument>
+                        <argument id="autoRetry"/>
+                      </arguments>
+                      <generatedParameters>
+                        <apiParam group="value" name="value" title="Value">
+                          <summary>The value to be populated.</summary>
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                        <apiParam group="value" name="blur" title="Tab off field">
+                          <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                          <type>
+                            <booleanType/>
+                          </type>
+                        </apiParam>
+                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                          <type>
+                            <booleanType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
                     </apiCall>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="136" title="Click the SaveEdit button">
                       <arguments>

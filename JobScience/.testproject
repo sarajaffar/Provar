@@ -99,6 +99,12 @@
             <connectionUrl envName="TestEnv" url="sf:user=nick.pirog@tesglobal.com.test;environment=PROD_DEV;logonAsConnection=JobScience"/>
           </connectionUrls>
         </connection>
+        <connection name="AndrewMoran">
+          <summary>Sirenum</summary>
+          <connectionUrls>
+            <connectionUrl url="sf:user=andrew.moran@visionforeducation.co.uk.test;environment=PROD_DEV;logonAsConnection=JobScience"/>
+          </connectionUrls>
+        </connection>
       </connections>
     </connectionClass>
     <connectionClass name="google">
@@ -124,6 +130,30 @@
       </connections>
     </connectionClass>
   </connectionClasses>
+  <tagTypes>
+    <tagType name="sla" tagClass="sla" title="SLA Requirement">
+      <summary>Service Level Agreement requirement</summary>
+      <tags>
+        <slaTag expectedDurationMs="60000" maximumDurationMs="120000" name="Scheduler">
+          <summary/>
+        </slaTag>
+        <slaTag expectedDurationMs="60000" maximumDurationMs="120000" name="Scheduler">
+          <summary/>
+        </slaTag>
+      </tags>
+      <tagTypeTargets>
+        <tagTypeTarget targetName="com.provar.core.model.test.api.ITestItem"/>
+      </tagTypeTargets>
+    </tagType>
+    <tagType name="functionalarea" tagClass="functionalarea" title="Functional Area">
+      <summary>The functional area that a Test Item belongs to</summary>
+      <tags>
+        <tag>
+          <summary/>
+        </tag>
+      </tags>
+    </tagType>
+  </tagTypes>
   <browserConfigurations>
     <browserConfiguration adjustBrowserWidthForChromeIde="true" browserHeight="0" browserWidth="0" name="Full Screen">
       <summary>Full screen with Test Builder adjustment</summary>

@@ -46,6 +46,8 @@
         <argument id="lightningMode">
           <value class="value" valueClass="string">default</value>
         </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="webBrowser"/>
       </arguments>
     </apiCall>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="3" title="Set Values: AccountGroupName">
@@ -210,7 +212,7 @@
       <value class="value" valueClass="string">Multi-Academy Trust</value>
     </argument>
     <argument id="RecordType">
-      <value class="value" valueClass="string">School Group</value>
+      <value class="value" valueClass="string">012w0000000722fAAA</value>
     </argument>
   </args>
   <outputArgs>

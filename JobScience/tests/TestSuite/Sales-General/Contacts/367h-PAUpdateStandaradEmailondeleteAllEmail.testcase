@@ -60,7 +60,7 @@
               <clauses>
                 <clause name="hidden" testItemId="439">
                   <steps>
-                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="455">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testCasePath="tests/Callable/Sales-General/CreateAccount.testcase" testItemId="455">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -93,7 +93,7 @@
               <clauses>
                 <clause name="hidden" testItemId="442">
                   <steps>
-                    <caseCall testCaseId="dcf79e91-97ae-4995-9b4f-9cf551871e2e" testItemId="443">
+                    <caseCall testCaseId="dcf79e91-97ae-4995-9b4f-9cf551871e2e" testCasePath="tests/Callable/Sales-General/CreateContact.testcase" testItemId="443">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -706,7 +706,7 @@
       <clauses>
         <clause name="hidden" testItemId="232">
           <steps>
-            <caseCall testCaseId="e9d906a5-baa9-44c5-862c-613cfefef480" testItemId="431">
+            <caseCall testCaseId="e9d906a5-baa9-44c5-862c-613cfefef480" testCasePath="tests/Callable/Sales-General/DeleteContact.testcase" testItemId="431">
               <arguments>
                 <argument id="objectId">
                   <value class="variable">

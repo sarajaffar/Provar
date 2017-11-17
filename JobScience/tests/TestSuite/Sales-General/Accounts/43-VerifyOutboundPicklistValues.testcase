@@ -62,7 +62,7 @@
               <clauses>
                 <clause name="hidden" testItemId="43">
                   <steps>
-                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="48">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testCasePath="tests/Callable/Sales-General/CreateAccount.testcase" testItemId="48">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>

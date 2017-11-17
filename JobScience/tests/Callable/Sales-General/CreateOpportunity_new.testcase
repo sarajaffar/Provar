@@ -113,7 +113,7 @@
           </value>
         </argument>
         <argument argId="28b6d248-0260-4443-b902-6167c1768511" id="RecordType">
-          <value class="value" valueClass="string">School Group</value>
+          <value class="value" valueClass="string">012w0000000722fAAA</value>
         </argument>
       </arguments>
       <outputArguments>
@@ -137,9 +137,6 @@
           <value class="variable">
             <path element="AccountId"/>
           </value>
-        </argument>
-        <argument id="RecordTypeId">
-          <value class="value" valueClass="string">Subscription Opportunity</value>
         </argument>
         <argument id="Name">
           <value class="value" valueClass="string">ProvarTest V3GI Group Recruitment Subs</value>
@@ -200,6 +197,9 @@
         <argument id="Customer_Journey_Type__c">
           <value class="value" valueClass="string">Authorised</value>
         </argument>
+        <argument id="RecordTypeId">
+          <value class="value" valueClass="string">012w0000000V1DFAA0</value>
+        </argument>
       </arguments>
       <parameterGeneratorProperties>
         <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">JobScience</propertyValue>
@@ -207,7 +207,6 @@
       </parameterGeneratorProperties>
       <generatedParameters>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=AccountId" name="AccountId" title="AccountId"/>
-        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
@@ -226,6 +225,7 @@
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=IsGroupOpportunity__c" name="IsGroupOpportunity__c" title="IsGroupOpportunity__c"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Agency_Involvement__c" name="Agency_Involvement__c" title="Agency_Involvement__c"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Customer_Journey_Type__c" name="Customer_Journey_Type__c" title="Customer_Journey_Type__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
       </generatedParameters>
     </apiCall>
   </steps>

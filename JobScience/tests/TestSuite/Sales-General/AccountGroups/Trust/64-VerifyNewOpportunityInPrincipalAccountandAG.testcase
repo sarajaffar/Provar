@@ -104,7 +104,7 @@
               <clauses>
                 <clause name="hidden" testItemId="233">
                   <steps>
-                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="321">
+                    <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testCasePath="tests/Callable/Sales-General/CreateAccount.testcase" testItemId="321">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -124,7 +124,7 @@
                         </outputArgument>
                       </outputArguments>
                     </caseCall>
-                    <caseCall testCaseId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" testItemId="305">
+                    <caseCall testCaseId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" testCasePath="tests/Callable/Sales-General/CreateAccountGroup.testcase" testItemId="305">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -315,7 +315,7 @@
               <clauses>
                 <clause name="hidden" testItemId="314">
                   <steps>
-                    <caseCall testCaseId="fb9f37fd-8296-4c15-bd57-5c243854cbe6" testItemId="316">
+                    <caseCall testCaseId="fb9f37fd-8296-4c15-bd57-5c243854cbe6" testCasePath="tests/Callable/Sales-General/CreateOpportunityUI.testcase" testItemId="316">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">IanHoy</value>
@@ -477,7 +477,7 @@
                                   <value class="valueList" mutable="Mutable"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>
@@ -635,7 +635,7 @@
                                   <value class="valueList" mutable="Mutable"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>
