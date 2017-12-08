@@ -116,7 +116,7 @@
                       <clauses>
                         <clause name="hidden" testItemId="233">
                           <steps>
-                            <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testItemId="315">
+                            <caseCall testCaseId="9f5795be-81ec-4528-b0ed-b7c0e5f23f52" testCasePath="tests/Callable/Sales-General/CreateAccount.testcase" testItemId="315">
                               <arguments>
                                 <argument id="reuseConnectionName">
                                   <value class="value" valueClass="string">JobScience</value>
@@ -134,7 +134,7 @@
                                 </outputArgument>
                               </outputArguments>
                             </caseCall>
-                            <caseCall testCaseId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" testItemId="21">
+                            <caseCall testCaseId="bef0cc97-1ec8-484a-bbf4-9a714096dd31" testCasePath="tests/Callable/Sales-General/CreateAccountGroup.testcase" testItemId="21">
                               <arguments>
                                 <argument id="reuseConnectionName">
                                   <value class="value" valueClass="string">JobScience</value>

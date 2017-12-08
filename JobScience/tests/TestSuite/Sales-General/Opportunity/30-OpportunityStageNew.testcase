@@ -318,7 +318,7 @@
               </arguments>
               <parameterValueSources>
                 <parameterValueSource variableName="ExcelData" variableScope="Test">
-                  <sourceValue class="excelTarget" created="0" namesLocation="FirstColumnOfRange" updated="0" whereComparison="EqualTo">
+                  <sourceValue class="excelTarget" namesLocation="FirstColumnOfRange" whereComparison="EqualTo">
                     <workbookPath class="value" valueClass="string">templates/Hiring Solutions Regression Cycle-28th Sep.xlsx</workbookPath>
                     <worksheetName class="value" valueClass="string">Product</worksheetName>
                     <valuesRange class="value" valueClass="string">A1:A9</valuesRange>
@@ -2199,5 +2199,7 @@
       </clauses>
     </apiCall>
   </steps>
-  <tags/>
+  <tags>
+    <string>disabled</string>
+  </tags>
 </testCase>

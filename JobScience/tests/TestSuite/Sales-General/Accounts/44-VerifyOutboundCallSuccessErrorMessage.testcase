@@ -188,6 +188,9 @@
                       </generatedParameters>
                     </apiCall>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="63" title="On SF Task Record Type selection screen">
+                      <tags>
+                        <string>disabled</string>
+                      </tags>
                       <arguments>
                         <argument id="uiConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -499,7 +502,7 @@
                                   <value class="valueList" mutable="Mutable"/>
                                 </argument>
                                 <argument id="beforeWait">
-                                  <value class="uiWait" created="0" updated="0" uri="default"/>
+                                  <value class="uiWait" uri="default"/>
                                 </argument>
                                 <argument id="autoRetry"/>
                               </arguments>

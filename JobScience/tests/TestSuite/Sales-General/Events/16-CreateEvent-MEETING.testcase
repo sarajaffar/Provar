@@ -81,7 +81,7 @@
               <clauses>
                 <clause name="hidden" testItemId="26">
                   <steps>
-                    <caseCall testCaseId="7a9cdb31-c852-4464-a1f6-ab34d08fa7e4" testItemId="27">
+                    <caseCall testCaseId="7a9cdb31-c852-4464-a1f6-ab34d08fa7e4" testCasePath="tests/Callable/Sales-General/CreateOpportunity_new.testcase" testItemId="27">
                       <arguments>
                         <argument id="reuseConnectionName">
                           <value class="value" valueClass="string">JobScience</value>
@@ -131,7 +131,7 @@
               <clauses>
                 <clause name="hidden" testItemId="19">
                   <steps>
-                    <caseCall testCaseId="dde2110c-6c24-43be-bf2c-bee60515a725" testItemId="20">
+                    <caseCall testCaseId="dde2110c-6c24-43be-bf2c-bee60515a725" testCasePath="tests/Callable/Sales-General/CreateEvent.testcase" testItemId="20">
                       <tags/>
                       <arguments>
                         <argument id="EventName">

@@ -1,1 +1,7 @@
-/pageobjects/
+.metadata
+*/ProvarANT/*
+*/ProvarANT/Results*
+*/bin/*
+*/*.pdf
+.provarCaches
+.testcycles
